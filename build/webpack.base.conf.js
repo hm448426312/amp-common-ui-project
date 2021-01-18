@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const NODE_ENV = process.env.NODE_ENV;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -10,15 +11,19 @@ function resolve (dir) {
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-  entry: {
-    app: './src/main.js'
-  },
+  // entry: {
+  //   app: './src/main.js'
+  // },
+  entry: NODE_ENV == 'development' ? './src/main.js' : './index.js'
   output: {
     path: config.build.assetsRoot,
-    filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    filename: 'amp-ui.js',
+    library: 'amp-ui',
+    libraryTarget: "umd",
+    umdNamedDefine: true,
+    publicPath: NODE_ENV == 'development'
+      ? config.dev.assetsPublicPath
+      : config.build.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', 'scss',  '.vue', '.json'],
