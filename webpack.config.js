@@ -7,8 +7,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'amp-ui.js',
-    library: 'amp-ui',
+    filename: 'amp-common-ui.js',
+    library: 'amp-common-ui',
     libraryTarget: "umd",
     umdNamedDefine: true
   },
