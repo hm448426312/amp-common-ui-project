@@ -1,0 +1,135 @@
+/*全局样式*/
+* {
+  margin: 0;
+  font-weight: normal;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+}
+
+/**阴影:用于分割块/tip/组件*/
+.shadow-base {
+  box-shadow: 0 1px 2px rgba(161, 171, 181, 0.2), 0 2px 8px rgba(33, 42, 64, 0.1);
+}
+
+/**阴影:用于浮窗*/
+.shadow-dialog {
+  box-shadow: 0 1px 2px rgba(161, 171, 181, 0.2), 0 6px 20px rgba(33, 42, 64, 0.1);
+}
+
+/**阴影:用于右抽屉*/
+.shadow-dialog-left {
+  box-shadow: -6px 0 20px rgba(33, 42, 64, 0.1);
+}
+
+/**阴影:用于左抽屉*/
+.shadow-dialog-right {
+  box-shadow: 6px 0 20px rgba(33, 42, 64, 0.1);
+}
+
+/**阴影:用于卡片交互*/
+.shadow-card {
+  box-shadow: 0 1px 2px rgba(161, 171, 181, 0.2), 0 15px 25px rgba(33, 42, 64, 0.1);
+}
+
+/*placeholder颜色*/
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #A0A4AF !important;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #A0A4AF !important;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #A0A4AF !important;
+}
+
+/*webkit滚动条样式*/
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: #A3A9B7;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #A3A9B7;
+}
+
+.overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.white-space-pre {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mt16 {
+  margin-top: 16px;
+}
+
+.amp-multiple-confirm-popper {
+  padding: 0;
+}
+
+/*公共布局样式*/
+.right-header-title {
+  font-size: 16px;
+  color: #212A40;
+  height: 34px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 0 0 0;
+  &.sub-page {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #EAEDF1;
+  }
+  > .desc {
+    color: #A0A4AF;
+    font-size: 14px;
+    margin-left: 16px;
+  }
+}
+
+.right-header-filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .filter-item {
+    padding-top: 24px;
+    margin-right: 12px;
+    > .el-input,
+    > .el-select {
+      width: 224px;
+    }
+  }
+  .filter-button {
+    padding-top: 24px;
+    margin-left: auto;
+  }
+}
+
+
