@@ -25,9 +25,8 @@
             <br/>
             confirm(确认，返回参数为选中的value数组)</p>
         </el-form-item>
-        <el-form-item label="付款-复选框">
+        <el-form-item label="付款-复选框-无数据">
           <el-popover
-            ref="ampFilterConfirmPopperCheckboxRef"
             popper-class="amp-multiple-confirm-popper"
             placement="bottom-start"
             v-model="value1"
@@ -35,6 +34,26 @@
             <amp-filter-confirm
               v-if="value1"
               @cancel="value1=false"
+              @confirm="checkboxConfirmEvent"
+              :default-checked="valueChecked"
+            ></amp-filter-confirm>
+            <amp-button
+              slot="reference"
+              type="text"
+            >点我弹出浮框修改-checkbox<i class="el-icon-arrow-down el-icon--right"></i></amp-button>
+          </el-popover>
+        </el-form-item>
+        <el-form-item label="付款-复选框">
+          <el-popover
+            ref="ampFilterConfirmPopperCheckboxRef"
+            popper-class="amp-multiple-confirm-popper"
+            placement="bottom-start"
+            v-model="value4"
+            trigger="click">
+            <amp-filter-confirm
+              v-if="value4"
+              :source="source"
+              @cancel="value4=false"
               @confirm="checkboxConfirmEvent"
               :default-checked="valueChecked"
             ></amp-filter-confirm>
@@ -80,6 +99,7 @@
             <amp-filter-confirm
               v-if="value3"
               type="select"
+              :source="source"
               :default-selected="valueSelected"
               @cancel="value3=false"
               @confirm="selectConfirmEvent"
@@ -100,6 +120,19 @@
         value2: false,
         value2Const: "",
         value3: false,
+        value4: false,
+        source: [
+          {
+            label: "显示文本1",
+            value: "1",
+          }, {
+            label: "显示文本2",
+            value: "2",
+          }, {
+            label: "显示文本3",
+            value: "3",
+          }
+        ],
         value3Const: "",
         valueChecked: [],
         valueSelected: "",
@@ -109,6 +142,7 @@
     methods: {
       checkboxConfirmEvent(checkedList) {
         this.value1 = false;
+        this.value4 = false;
         this.valueChecked = checkedList;
         console.log(checkedList, "外层");
       },

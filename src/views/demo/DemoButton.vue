@@ -13,6 +13,16 @@
           <amp-button icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i></amp-button>
           <amp-button disabled>Default按钮</amp-button>
         </el-form-item>
+        <el-form-item label="large按钮">
+          <amp-button size="large">Default按钮</amp-button>
+          <amp-button size="large" icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i></amp-button>
+          <amp-button size="large" disabled>Default按钮</amp-button>
+        </el-form-item>
+        <el-form-item label="mini按钮">
+          <amp-button size="mini">Default按钮</amp-button>
+          <amp-button size="mini" icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i></amp-button>
+          <amp-button size="mini" disabled>Default按钮</amp-button>
+        </el-form-item>
         <el-form-item label="primary按钮">
           <amp-button type="primary">Primary按钮</amp-button>
           <amp-button icon="el-icon-edit" type="primary">Primary按钮<i class="el-icon-upload el-icon--right"></i>

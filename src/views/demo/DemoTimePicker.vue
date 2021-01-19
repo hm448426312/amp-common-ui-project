@@ -18,20 +18,20 @@
         <el-form-item label="选择任意时间-范围">
           <amp-time-picker
             is-range
-            v-model="valueStr"
+            v-model="valueStr1"
           ></amp-time-picker>
           <amp-time-picker
             is-range
-            v-model="valueStr"
+            v-model="valueStr1"
             disabled
           ></amp-time-picker>
         </el-form-item>
         <el-form-item label="选择固定时间">
           <amp-time-select
-            v-model="valueStr1"
+            v-model="valueStr2"
           ></amp-time-select>
           <amp-time-select
-            v-model="valueStr1"
+            v-model="valueStr2"
             disabled
           ></amp-time-select>
         </el-form-item>
@@ -47,6 +47,7 @@
       return {
         valueStr: "",
         valueStr1: "",
+        valueStr2: "",
         valueArr: []
       }
     },

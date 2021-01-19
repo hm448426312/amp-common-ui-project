@@ -4,8 +4,6 @@
     ref="AmpPaginationRef"
     v-bind="$attrs"
     v-on="$listeners"
-    background
-    :small="true"
   >
     <slot></slot>
   </el-pagination>

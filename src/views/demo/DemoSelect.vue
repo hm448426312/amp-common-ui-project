@@ -18,6 +18,26 @@
             <amp-option label="用户电话4" value="6"></amp-option>
           </amp-select>
         </el-form-item>
+        <el-form-item label="普通下拉-large">
+          <amp-select size="large" clearable v-model="valueStr" placeholder="请选择">
+            <amp-option disabled label="餐厅名(不可选)" value="1"></amp-option>
+            <amp-option label="订单号" value="2"></amp-option>
+            <amp-option label="用户电话用户电话用户电话用户电话" value="3"></amp-option>
+            <amp-option label="用户电话2" value="4"></amp-option>
+            <amp-option label="用户电话3" value="5"></amp-option>
+            <amp-option label="用户电话4" value="6"></amp-option>
+          </amp-select>
+        </el-form-item>
+        <el-form-item label="普通下拉-mini">
+          <amp-select size="mini" clearable v-model="valueStr" placeholder="请选择">
+            <amp-option disabled label="餐厅名(不可选)" value="1"></amp-option>
+            <amp-option label="订单号" value="2"></amp-option>
+            <amp-option label="用户电话用户电话用户电话用户电话" value="3"></amp-option>
+            <amp-option label="用户电话2" value="4"></amp-option>
+            <amp-option label="用户电话3" value="5"></amp-option>
+            <amp-option label="用户电话4" value="6"></amp-option>
+          </amp-select>
+        </el-form-item>
         <el-form-item label="筛选下拉">
           <amp-select filter="xxxxxxxxx" clearable v-model="valueStr" placeholder="请选择">
             <amp-option disabled label="餐厅名(不可选)" value="1"></amp-option>

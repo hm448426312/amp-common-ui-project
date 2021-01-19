@@ -21,6 +21,16 @@
             <el-input clearable disabled v-model="inputValue"></el-input>
           </div>
         </el-form-item>
+        <el-form-item label="输入框-large">
+          <div style="width: 250px;">
+            <el-input size="large" clearable v-model="inputValue"></el-input>
+          </div>
+        </el-form-item>
+        <el-form-item label="输入框-mini">
+          <div style="width: 250px;">
+            <el-input size="mini" clearable v-model="inputValue"></el-input>
+          </div>
+        </el-form-item>
         <el-form-item label="无边框搜索框">
           <div style="width: 250px;">
             <el-input

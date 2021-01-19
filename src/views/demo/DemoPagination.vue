@@ -9,7 +9,16 @@
           <p>4.页码配置，使用全局定义的PAGE_NORMAL_CONFIG(普通)或者PAGE_MINI_CONFIG(小)</p>
           <p>5.配置参考el-pagination</p>
         </el-form-item>
-        <el-form-item label="全量分页">
+        <el-form-item label="全量分页-带背景色">
+          <amp-pagination
+            :current-page="pageNormal.pageNum"
+            :page-sizes="pageNormal.pageSizes"
+            :page-size="pageNormal.pageSize"
+            :total="400"
+            background
+          ></amp-pagination>
+        </el-form-item>
+        <el-form-item label="全量分页-无背景色">
           <amp-pagination
             :current-page="pageNormal.pageNum"
             :page-sizes="pageNormal.pageSizes"
@@ -17,8 +26,28 @@
             :total="400"
           ></amp-pagination>
         </el-form-item>
-        <el-form-item label="小分页">
+        <el-form-item label="小分页-带背景色">
           <amp-pagination
+            :small="true"
+            :page-sizes="pageNormal.pageSizes"
+            :page-size="pageNormal.pageSize"
+            :layout="pageNormal.layout"
+            background
+            :total="100">
+          </amp-pagination>
+        </el-form-item>
+        <el-form-item label="小分页-无背景色">
+          <amp-pagination
+            :small="true"
+            :page-sizes="pageNormal.pageSizes"
+            :page-size="pageNormal.pageSize"
+            :layout="pageNormal.layout"
+            :total="100">
+          </amp-pagination>
+        </el-form-item>
+        <el-form-item label="小分页-mini">
+          <amp-pagination
+            :small="true"
             :page-sizes="pageMini.pageSizes"
             :page-size="pageMini.pageSize"
             :layout="pageMini.layout"
@@ -26,7 +55,6 @@
           </amp-pagination>
         </el-form-item>
       </el-form>
-
     </div>
   </amp-layout-content>
 </template>

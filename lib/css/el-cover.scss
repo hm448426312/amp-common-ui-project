@@ -23,6 +23,7 @@
 .el-button {
   // 非文本按钮
   font-size: 14px;
+  font-weight: normal;
   .amp-button-icon {
     font-size: 16px;
   }
@@ -53,6 +54,12 @@
       min-width: 80px !important;
       padding: 0 16px !important;
     }
+    &.el-button--large {
+      font-size: 14px;
+      height: 40px !important;
+      min-width: 80px !important;
+      padding: 0 16px !important;
+    }
     //小按钮大小设置
     &.el-button--mini {
       min-width: 56px !important;
@@ -68,10 +75,11 @@
         border-color: #DCDFE6;
         background-color: #ffffff;
         color: #212A40;
-        &:hover {
-          color: #1179F0;
-          border-color: #1179F0;
-        }
+        //&:hover {
+        //  color: #1179F0;
+        //  border-color: #1179F0;
+        //}
+        &:hover,
         &:active {
           color: #0560CC;
           border-color: #0560CC;
@@ -80,10 +88,11 @@
       &.el-button--primary {
         background-color: #1179F0;
         border-color: #1179F0;
-        &:hover {
-          background: #3895FF;
-          border-color: #3895FF;
-        }
+        //&:hover {
+        //  background: #3895FF;
+        //  border-color: #3895FF;
+        //}
+        &:hover,
         &:active {
           background: #0560CC;
           border-color: #0560CC;
@@ -92,10 +101,11 @@
       &.el-button--danger {
         background-color: #E24A4A;
         border-color: #E24A4A;
-        &:hover {
-          background: #FF8B8B;
-          border-color: #FF8B8B;
-        }
+        //&:hover {
+        //  background: #FF8B8B;
+        //  border-color: #FF8B8B;
+        //}
+        &:hover,
         &:active {
           background: #BE2929;
           border-color: #BE2929;
@@ -123,6 +133,12 @@
   // 文本按钮
   &.el-button--text {
     padding: 0;
+    .amp-button-icon {
+      font-size: 18px;
+    }
+    & + .el-button--text {
+      margin-left: 12px;
+    }
     // 非禁用
     &:not(.is-disabled) {
       // 带ICON的文本按钮
@@ -139,12 +155,13 @@
           color: #1179F0;
         }
       }
-      &:hover {
-        color: #3895FF !important;
-        &.amp-text-button-sub-danger {
-          color: #E24A4A !important;
-        }
-      }
+      //&:hover {
+      //  color: #3895FF !important;
+      //  &.amp-text-button-sub-danger {
+      //    color: #E24A4A !important;
+      //  }
+      //}
+      &:hover,
       &:active {
         color: #0560CC !important;
         &.amp-text-button-sub-danger {
@@ -163,6 +180,7 @@
 .el-input {
   position: relative;
   &.el-input--mini {
+    line-height: 24px;
     > .el-input__inner {
       height: 24px;
       line-height: 24px;
@@ -323,7 +341,7 @@
   .el-textarea__inner {
     border: 1px solid #DCDFE6;
     border-radius: 2px;
-    padding: 0 12px;
+    padding: 4px 12px;
     font-size: 14px;
   }
   &.is-disabled {
@@ -665,6 +683,7 @@
     .el-checkbox-button__inner {
       font-size: 14px;
       padding: 8px 15px;
+      font-weight: normal;
     }
     &:first-child {
       .el-checkbox-button__inner {
@@ -777,6 +796,7 @@
   .el-radio-button__inner {
     font-size: 14px;
     padding: 8px 15px;
+    font-weight: normal;
   }
   &:first-child {
     .el-radio-button__inner {
@@ -997,61 +1017,104 @@
 
 /*分页栏样式重置*/
 .el-pagination {
-  &.is-background {
-    > .el-pagination__total {
-      color: #646B80;
-    }
-    > .el-pagination__sizes {
-      .el-select--mini {
-        .el-input {
-          width: 90px;
-          .el-input__inner {
-            color: #646B80;
-            height: 22px;
-            line-height: 22px;
-          }
-          .el-input__icon {
-            line-height: 22px;
-          }
-        }
-      }
-    }
-    > .el-pagination__jump {
-      color: #646B80;
+  > .el-pagination__total {
+    color: #646B80;
+  }
+  > .el-pagination__sizes {
+    .el-select--mini {
       .el-input {
-        width: 45px;
+        width: 90px;
         .el-input__inner {
-          padding: 0 8px;
+          color: #646B80;
+          height: 28px;
+          line-height: 28px;
+        }
+        .el-input__icon {
+          line-height: 28px;
         }
       }
     }
-    > .el-pager {
-      li:not(.disabled) {
-        background: #F5F7FA;
-        color: #212A40;
+  }
+  > .el-pagination__jump {
+    color: #646B80;
+    .el-input {
+      width: 45px;
+      .el-input__inner {
+        padding: 0 8px;
+      }
+    }
+  }
+  > .el-pager {
+    li {
+      height: 28px;
+      line-height: 28px;
+      min-width: 28px;
+      &:not(.disabled) {
         font-weight: normal;
-        &.active {
-          background: #1179F0;
-          color: #ffffff;
-        }
-        &.el-icon-more {
-          color: #646B80;
-        }
-        &:not(.active):hover {
-          color: #1179F0;
+      }
+    }
+  }
+  > button {
+    min-width: 28px !important;
+    height: 28px;
+    line-height: 28px;
+    > .el-icon {
+      color: #646B80;
+    }
+    &:not([disabled="disabled"]):hover {
+      > .el-icon {
+        color: #212A40;
+      }
+    }
+  }
+  &.is-background {
+    > .el-pager {
+      li {
+        &:not(.disabled) {
+          background: #F5F7FA;
+          color: #212A40;
+          &.active {
+            background: #1179F0;
+            color: #ffffff;
+          }
+          &.el-icon-more {
+            color: #646B80;
+          }
+          &:not(.active):hover {
+            color: #1179F0;
+          }
         }
       }
     }
     > button {
       background: #F5F7FA;
-      > .el-icon {
-        color: #646B80;
-      }
-      &:not([disabled="disabled"]):hover {
-        > .el-icon {
-          color: #212A40;
+    }
+  }
+  &.el-pagination--small {
+    > .el-pagination__sizes {
+      .el-select--mini {
+        .el-input {
+          .el-input__inner {
+            height: 24px;
+            line-height: 24px;
+          }
+          .el-input__icon {
+            line-height: 24px;
+          }
         }
       }
+    }
+    > .el-pager {
+      li {
+        height: 24px;
+        line-height: 24px;
+        min-width: 24px !important;
+      }
+    }
+    > button {
+      min-width: 24px !important;
+      height: 24px;
+      line-height: 24px;
     }
   }
 }
@@ -1232,9 +1295,8 @@
 }
 
 /*el-time-panel时间控件样式重置*/
-.el-time-panel {
-  border: none;
-  box-shadow: 0 1px 2px rgba(161, 171, 181, 0.2), 0 2px 8px rgba(33, 42, 64, 0.1);
+.el-time-panel,
+.el-time-range-picker {
   .el-time-panel__content {
     &:before {
       border-color: #EAEDF1;
