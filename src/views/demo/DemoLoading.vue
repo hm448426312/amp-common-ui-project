@@ -26,9 +26,9 @@
     methods: {
       showLoading(target) {
         this.$AmpLoading(true, target);
-        // setTimeout(() => {
-        //   this.$AmpLoading(false)
-        // }, 3000);
+        setTimeout(() => {
+          this.$AmpLoading(false)
+        }, 3000);
       },
     }
   }

@@ -14,7 +14,7 @@
       <slot></slot>
       <template slot="empty" v-if="!$attrs.loading">
         <slot name="myEmpty">
-          <img width="178" style="margin-top: 50px;" src="../../../lib/img/table-nodata.png">
+          <img width="178" style="margin-top: 50px;" src="/lib/img/table-nodata.png">
           <div style="margin-bottom: 50px;">暂无数据</div>
         </slot>
       </template>

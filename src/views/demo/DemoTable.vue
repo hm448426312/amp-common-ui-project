@@ -230,6 +230,58 @@
             </template>
           </amp-table>
         </el-form-item>
+        <el-form-item label="表格-无数据">
+          <amp-table
+            :loading="false"
+            :data="[]"
+            border
+            style="width: 100%"
+          >
+            <el-table-column
+              type="selection"
+              width="40"
+              fixed="left"
+            >
+            </el-table-column>
+            <template v-for="(header, index) of table.header1">
+              <el-table-column
+                :prop="header.field"
+                :key="index"
+                :label="header.label"
+                :width="header.width || ''"
+                :align="header.align || 'left'"
+                :sortable="header.sortable"
+                :fixed="header.fixed || false"
+                show-overflow-tooltip
+              >
+                <template slot-scope="scope">
+                  <template v-if="header.field === 'action'">
+                    <amp-button
+                      type="text"
+                      icon="el-icon-edit"
+                      tooltip="编辑"
+                      @click="editRowEvent"
+                    ></amp-button>
+                    <amp-button
+                      type="text"
+                      icon="el-icon-delete"
+                      tooltip="删除"
+                      @click="deleteRowEvent"
+                    ></amp-button>
+                  </template>
+                  <!-- 如果有列需要特殊处理，此处增加v-else-if即可 -->
+                  <template v-else>
+                    <span class="white-space-pre">{{scope.row[header.field] || ''}}</span>
+                  </template>
+                </template>
+              </el-table-column>
+            </template>
+            <template slot="multipleHeader">
+              <amp-button type="text" icon="el-icon-edit">批量编辑</amp-button>
+              <amp-button type="text" icon="el-icon-delete">批量删除</amp-button>
+            </template>
+          </amp-table>
+        </el-form-item>
       </el-form>
     </div>
   </amp-layout-content>
