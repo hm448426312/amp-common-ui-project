@@ -18,16 +18,14 @@
 </template>
 
 <script>
-  import {AmpGlobalMix} from "../../../lib/mixins/mixins";
 
   export default {
     name: "DemoButton",
-    mixins: [AmpGlobalMix],
     methods: {
       showLoading(target) {
-        this.$AmpLoading(true, target);
+        let loadingFlag = this.$AmpLoading(target);
         setTimeout(() => {
-          this.$AmpLoading(false)
+          loadingFlag.close();
         }, 3000);
       },
     }

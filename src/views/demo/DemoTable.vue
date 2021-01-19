@@ -288,11 +288,9 @@
 </template>
 
 <script>
-  import {AmpGlobalMix} from "../../plugins/mixins";
 
   export default {
     name: "DemoTable",
-    mixins: [AmpGlobalMix],
     data() {
       return {
         table: {

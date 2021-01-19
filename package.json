@@ -1,7 +1,7 @@
 {
   "name": "amp-common-ui",
   "description": "AMP项目公共组件UI",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "humiao@chinasoftinc.com",
   "private": false,
   "main": "./index.js",

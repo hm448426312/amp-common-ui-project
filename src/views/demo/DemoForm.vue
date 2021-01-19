@@ -152,10 +152,8 @@
 </template>
 
 <script>
-  import {AmpGlobalMix} from "../../plugins/mixins";
 
   export default {
-    mixins: [AmpGlobalMix],
     name: "DemoForm",
     data() {
       return {

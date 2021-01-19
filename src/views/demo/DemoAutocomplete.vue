@@ -27,7 +27,6 @@
           <el-autocomplete
             class="no-border"
             v-model="inputValue"
-            clearable
             :fetch-suggestions="querySearchAsync"
             prefix-icon="el-icon-search"
             placeholder="请输入内容"

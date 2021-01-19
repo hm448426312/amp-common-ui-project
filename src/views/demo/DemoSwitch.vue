@@ -46,11 +46,9 @@
 </template>
 
 <script>
-  import {AmpGlobalMix} from "../../plugins/mixins";
 
   export default {
     name: "DemoSwitch",
-    mixins: [AmpGlobalMix],
     data() {
       return {
         value1: true,

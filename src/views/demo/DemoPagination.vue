@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  import {PAGE_NORMAL_CONFIG, PAGE_MINI_CONFIG} from "../../constant/global";
+  import {PAGE_NORMAL_CONFIG, PAGE_MINI_CONFIG} from "../../../lib/constant/global";
 
   export default {
     name: "DemoPagination",

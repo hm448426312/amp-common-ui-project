@@ -21,11 +21,9 @@
 </template>
 
 <script>
-  import {AmpGlobalMix} from "../../plugins/mixins";
 
   export default {
     name: "DemoMessage",
-    mixins: [AmpGlobalMix],
     data() {
       return {
         valueStr: "",

@@ -1,7 +1,8 @@
 import Vue from "vue";
-// 静态资源
-// import "./src/assets/css/el-cover.scss";
-// import "./src/assets/css/g-class.scss";
+// 方法
+import {AmpMessage} from "./src/components/method/amp-message";
+import {AmpNotify} from "./src/components/method/amp-notification";
+import {AmpLoading} from "./src/components/method/amp-loading";
 // 控件
 import AmpButton from "./src/components/common/AmpButton";
 import AmpTooltip from "./src/components/common/AmpTooltip";
@@ -39,6 +40,9 @@ import AmpLayoutWrap from "./src/components/layout/AmpLayoutWrap";
 import AmpLayoutContent from "./src/components/layout/AmpLayoutContent";
 
 const install = function (Vue) {
+  Vue.prototype.$AmpMessage = AmpMessage;
+  Vue.prototype.$AmpNotify = AmpNotify;
+  Vue.prototype.$AmpLoading = AmpLoading;
   Vue.component(AmpButton.name, AmpButton);
   Vue.component(AmpTooltip.name, AmpTooltip);
   Vue.component(AmpOverTooltip.name, AmpOverTooltip);
@@ -78,37 +82,41 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 export default {
   install,
-  AmpButton,
-  AmpTooltip,
-  AmpOverTooltip,
-  AmpCheckbox,
-  AmpCheckboxButton,
-  AmpCheckboxGroup,
-  AmpCascader,
-  AmpDatePicker,
-  AmpFormTable,
-  AmpLink,
-  AmpOption,
-  AmpOptionGroup,
-  AmpPagination,
-  AmpProgress,
-  AmpRadio,
-  AmpRadioButton,
-  AmpRadioGroup,
-  AmpSelect,
-  AmpSlider,
-  AmpSteps,
-  AmpSwitch,
-  AmpTable,
-  AmpTag,
-  AmpTimeline,
-  AmpTimelineItem,
-  AmpTimePicker,
-  AmpTimeSelect,
-  AmpCollapse,
-  AmpTree,
-  AmpMultipleConfirm,
-  AmpFilterConfirm,
-  AmpLayoutWrap,
-  AmpLayoutContent,
+  // 方法
+  // AmpMessage,
+  // // 控件
+  // AmpButton,
+  // AmpTooltip,
+  // AmpOverTooltip,
+  // AmpCheckbox,
+  // AmpCheckboxButton,
+  // AmpCheckboxGroup,
+  // AmpCascader,
+  // AmpDatePicker,
+  // AmpFormTable,
+  // AmpLink,
+  // AmpOption,
+  // AmpOptionGroup,
+  // AmpPagination,
+  // AmpProgress,
+  // AmpRadio,
+  // AmpRadioButton,
+  // AmpRadioGroup,
+  // AmpSelect,
+  // AmpSlider,
+  // AmpSteps,
+  // AmpSwitch,
+  // AmpTable,
+  // AmpTag,
+  // AmpTimeline,
+  // AmpTimelineItem,
+  // AmpTimePicker,
+  // AmpTimeSelect,
+  // AmpCollapse,
+  // AmpTree,
+  // AmpMultipleConfirm,
+  // AmpFilterConfirm,
+  // // 布局
+  // AmpLayoutWrap,
+  // AmpLayoutContent,
 }
