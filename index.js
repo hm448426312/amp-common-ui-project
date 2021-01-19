@@ -1,4 +1,7 @@
 import Vue from "vue";
+// 静态资源
+// import "./src/assets/css/el-cover.scss";
+// import "./src/assets/css/g-class.scss";
 // 控件
 import AmpButton from "./src/components/common/AmpButton";
 import AmpTooltip from "./src/components/common/AmpTooltip";

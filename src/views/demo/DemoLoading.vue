@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import {AmpGlobalMix} from "../../plugins/mixins";
+  import {AmpGlobalMix} from "../../../lib/mixins/mixins";
 
   export default {
     name: "DemoButton",
@@ -26,9 +26,9 @@
     methods: {
       showLoading(target) {
         this.$AmpLoading(true, target);
-        setTimeout(() => {
-          this.$AmpLoading(false)
-        }, 3000);
+        // setTimeout(() => {
+        //   this.$AmpLoading(false)
+        // }, 3000);
       },
     }
   }
