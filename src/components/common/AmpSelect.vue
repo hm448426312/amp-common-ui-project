@@ -1,6 +1,6 @@
 <template>
   <span
-    style="display: inline-flex"
+    style="display: inline-flex;"
     :class="{'amp-filter-select': $attrs.filter}"
   >
     <span class="prev-filter" v-if="$attrs.filter">{{$attrs.filter}}</span>
@@ -8,6 +8,7 @@
       ref="AmpSelectRef"
       v-bind="$attrs"
       v-on="$listeners"
+      :style="[{'width':innerWidth}]"
     >
       <slot/>
       <template slot="empty">
@@ -22,6 +23,12 @@
 <script>
   export default {
     name: "AmpSelect",
+    props: {
+      innerWidth: {
+        type: String,
+        default: ""
+      }
+    },
     mounted() {
       //初始化设置  下拉框宽度适应父输入框宽度
       const SELECT = this.$el;

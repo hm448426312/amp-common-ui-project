@@ -195,8 +195,12 @@
       line-height: 24px;
     }
     .el-input__icon {
-      line-height: 24px;
+      line-height: 25px;
+      font-size: 12px;
     }
+  }
+  .el-input__icon {
+    font-size: 16px;
   }
   &.el-input--prefix {
     > .el-input__inner {
@@ -509,11 +513,6 @@
       }
     }
   }
-  &.amp-select-nowrap {
-    .el-select__tags {
-      flex-wrap: nowrap;
-    }
-  }
   .el-tag {
     margin-left: 8px !important;
     border-radius: 18px !important;
@@ -534,12 +533,46 @@
     }
   }
   .el-select__tags {
-    .el-tag {
-      > .el-select__tags-text {
-        max-width: 80px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    > span {
+      .el-tag {
+        > .el-select__tags-text {
+          //max-width: 80px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+.amp-select-nowrap {
+  .el-select {
+    .el-select__tags {
+      flex-wrap: nowrap;
+      > span {
+        > .el-tag {
+          &:last-child {
+            min-width: 37px;
+            max-width: 37px;
+            .el-select__tags-text {
+              min-width: 40px;
+              max-width: 40px;
+            }
+          }
+          &:first-child {
+            min-width: auto;
+            max-width: unset;
+            .el-select__tags-text {
+              min-width: auto;
+              max-width: unset;
+            }
+          }
+        }
+      }
+      > input {
       }
     }
   }

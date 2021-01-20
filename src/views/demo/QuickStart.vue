@@ -3,15 +3,29 @@
     <div>
       <p>目录结构</p>
       <ul class="demo-box">
-        <li>组件源代码目录: src/components/common/*</li>
-        <li>组件源代码目录: src/components/layout/*</li>
-        <li>组件静态资源目录: src/assets/img/*</li>
-        <li>组件静态资源目录: src/assets/svg/*</li>
-        <li>组件css资源目录: src/assets/css/*</li>
-        <li>全局变量定义目录: src/constant/global.js</li>
-        <li>全局混入方法目录: src/plugins/mixins.js</li>
-        <li>全局组件注册目录: src/plugins/reg-components.js</li>
-        <li>更新main.js，引入上述css和reg-components.js</li>
+        <li>自定义/二次封装组件源代码目录: src/components/common/*</li>
+        <li>自定义布局组件源代码目录: src/components/layout/*</li>
+        <li>二次封装方法/自定义方法源代码目录: src/components/method/*</li>
+        <li>组件css资源目录: lib/css/*</li>
+        <li>全局变量定义目录: lib/constant/global.js</li>
+        <li>全局混入方法目录: lib/mixins.js</li>
+      </ul>
+      <br/>
+      <p>使用配置</p>
+      <ul class="demo-box">
+        <li>
+          <p>npm install amp-common-ui@latest --save</p>
+        </li>
+        <li>
+          <p>main.js修改：</p>
+          <p>a).import ElementUI from 'element-ui';</p>
+          <p>b).import AmpCommonUI from "amp-common-ui/dist/amp-common-ui"</p>
+          <p>c).import "element-ui/lib/theme-chalk/index.css";</p>
+          <p>d).import 'amp-common-ui/lib/css/g-class.scss';</p>
+          <p>e).import 'amp-common-ui/lib/css/el-cover.scss';</p>
+          <p>f).Vue.use(ElementUI, { size: 'small' });</p>
+          <p>g).Vue.use(AmpCommonUI);</p>
+        </li>
       </ul>
       <br/>
       <p>使用步骤</p>

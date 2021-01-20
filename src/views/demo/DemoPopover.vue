@@ -6,21 +6,26 @@
           <p>1.自研组件amp-multiple-confirm，运用于此类场景（不可用dropdown）</p>
           <p>2.外层请使用el-popover，并添加popper-class="amp-multiple-confirm-popper"，该样式控制内部padding</p>
           <p>3.el-popover的v-model值一定要在amp-multiple-confirm组件中进行v-if判断，保证每次加载内容都是根据数据渲染的</p>
-          <p>
-            4.amp-multiple-confirm组件提供配置：
+          <p>4.amp-multiple-confirm组件提供配置：</p>
+          <p style="margin-left: 20px;">
+            filterable(是否支持搜索，默认true，仅type为checkbox有效),
             <br/>
-            filterable(是否支持搜索，默认true),
+            type(组件显示的数据类型: textarea,input,select，默认为textarea),
             <br/>
-            source(复选框list数据),
+            source(复选框、下拉框的list数据),
             <br/>
-            label(复选框显示的文本key，默认label),
+            label(复选框、下拉框显示的文本key，默认label),
             <br/>
-            value(复选框选中的value值的key，默认value),
+            value(复选框、下拉框选中的value值的key，默认value),
             <br/>
-            defaultChecked(默认选中的数据[value])
+            defaultChecked(复选框默认选中的数据[value])
+            <br/>
+            defaultValue(输入框的默认显示值，默认为空)
+            <br/>
+            defaultSelected(下拉框的默认选中值，默认为空)
           </p>
-          <p>5.amp-multiple-confirm组件提供方法：
-            <br/>
+          <p>5.amp-multiple-confirm组件提供方法：</p>
+          <p style="margin-left: 20px;">
             cancel(取消，无参数返回),
             <br/>
             confirm(确认，返回参数为选中的value数组)</p>

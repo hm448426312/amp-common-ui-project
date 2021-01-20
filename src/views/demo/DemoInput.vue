@@ -8,7 +8,8 @@
         </el-form-item>
         <el-form-item label="default输入框">
           <div style="width: 250px;">
-            <el-input clearable v-model="inputValue"></el-input>
+            <el-input
+              prefix-icon="el-icon-plus" clearable v-model="inputValue"></el-input>
           </div>
         </el-form-item>
         <el-form-item label="">
@@ -23,12 +24,15 @@
         </el-form-item>
         <el-form-item label="输入框-large">
           <div style="width: 250px;">
-            <el-input size="large" clearable v-model="inputValue"></el-input>
+            <el-input
+              prefix-icon="el-icon-plus" size="large" clearable v-model="inputValue"></el-input>
           </div>
         </el-form-item>
         <el-form-item label="输入框-mini">
           <div style="width: 250px;">
-            <el-input size="mini" clearable v-model="inputValue"></el-input>
+            <el-input
+              prefix-icon="el-icon-plus"
+              size="mini" clearable v-model="inputValue"></el-input>
           </div>
         </el-form-item>
         <el-form-item label="无边框搜索框">

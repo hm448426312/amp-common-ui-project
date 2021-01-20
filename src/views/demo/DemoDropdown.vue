@@ -6,9 +6,8 @@
           <p>1.自研组件amp-multiple-confirm，运用于此类场景（不可用dropdown）</p>
           <p>2.外层请使用el-popover，并添加popper-class="amp-multiple-confirm-popper"，该样式控制内部padding</p>
           <p>3.el-popover的v-model值一定要在amp-multiple-confirm组件中进行v-if判断，保证每次加载内容都是根据数据渲染的</p>
-          <p>
-            4.amp-multiple-confirm组件提供配置：
-            <br/>
+          <p>4.amp-multiple-confirm组件提供配置：</p>
+          <p style="margin-left: 20px;">
             filterable(是否支持搜索，默认true),
             <br/>
             source(复选框list数据),
@@ -19,11 +18,13 @@
             <br/>
             defaultChecked(默认选中的数据[value])
           </p>
-          <p>5.amp-multiple-confirm组件提供方法：
-            <br/>
+          <p>5.amp-multiple-confirm组件抛出的方法：</p>
+          <p style="margin-left: 20px;">
             cancel(取消，无参数返回),
             <br/>
-            confirm(确认，返回参数为选中的value数组)</p>
+            confirm(确认，返回参数为选中的value数组)
+          </p>
+          <p>6.常规用法请使用el-dropdown原生组件，仅对其进行了样式修改：</p>
         </el-form-item>
         <el-form-item label="自定义组件-有数据">
           <amp-button
