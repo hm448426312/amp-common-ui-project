@@ -59,17 +59,32 @@
     methods: {
       switchChangeEvent() {
         this.value1 = !this.value1;
-        this.$confirm(`【该提示框需要自定义组件，暂时未实现】是否${this.value1 ? '不启用' : '启用'}?`, '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'info'
-        }).then(() => {
-          this.$AmpMessage({
-            message: `${this.value1 ? '不启用' : '启用'}成功`,
-            type: "success"
-          });
-          this.value1 = !this.value1;
-        });
+        const messageBox = this.$AmpMessageBox({
+          type: "warning",
+          title: "警告",
+          content: `是否${this.value1 ? '不启用' : '启用'}，来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本来点长的提示文本?`,
+          btn: [
+            {
+              text: '取消',
+              fn: () => {
+                messageBox.visible = false;
+                console.log("取消了");
+              }
+            },
+            {
+              type: "primary",
+              text: '确定',
+              fn: () => {
+                this.value1 = !this.value1;
+                messageBox.visible = false;
+                this.$AmpMessage({
+                  message: `${this.value1 ? '不启用' : '启用'}成功`,
+                  type: "success"
+                });
+              }
+            }
+          ]
+        })
       }
     }
   }

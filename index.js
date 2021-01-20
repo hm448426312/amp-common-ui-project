@@ -3,6 +3,7 @@ import Vue from "vue";
 import {AmpMessage} from "./src/components/method/amp-message";
 import {AmpNotify} from "./src/components/method/amp-notification";
 import {AmpLoading} from "./src/components/method/amp-loading";
+import AmpMessageBox from "./src/components/method/amp-messagebox/index";
 // 控件
 import AmpButton from "./src/components/common/AmpButton";
 import AmpTooltip from "./src/components/common/AmpTooltip";
@@ -43,6 +44,7 @@ const install = function (Vue) {
   Vue.prototype.$AmpMessage = AmpMessage;
   Vue.prototype.$AmpNotify = AmpNotify;
   Vue.prototype.$AmpLoading = AmpLoading;
+  Vue.prototype.$AmpMessageBox = AmpMessageBox.install;
   Vue.component(AmpButton.name, AmpButton);
   Vue.component(AmpTooltip.name, AmpTooltip);
   Vue.component(AmpOverTooltip.name, AmpOverTooltip);

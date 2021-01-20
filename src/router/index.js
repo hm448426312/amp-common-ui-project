@@ -14,6 +14,7 @@ import DemoDatePicker from "../views/demo/DemoDatePicker";
 import DemoTimePicker from "../views/demo/DemoTimePicker";
 import DemoDrawer from "../views/demo/DemoDrawer";
 import DemoMessage from "../views/demo/DemoMessage";
+import DemoMessageBox from "../views/demo/DemoMessageBox";
 import DemoNotification from "../views/demo/DemoNotification";
 import DemoPagination from "../views/demo/DemoPagination";
 import DemoProgress from "../views/demo/DemoProgress";
@@ -33,6 +34,7 @@ import DemoLoading from "../views/demo/DemoLoading";
 import DemoPopover from "../views/demo/DemoPopover";
 import DemoForm from "../views/demo/DemoForm";
 import DemoLayoutFullPage from "../views/demo/DemoLayoutFullPage";
+import DemoDialog from "../views/demo/DemoDialog";
 
 Vue.use(Router)
 
@@ -133,9 +135,19 @@ export default new Router({
           component: DemoMessage
         },
         {
+          path: 'message-box',
+          title: 'message消息确认提示框',
+          component: DemoMessageBox
+        },
+        {
           path: 'notification',
           title: 'notification消息通知',
           component: DemoNotification
+        },
+        {
+          path: 'dialog',
+          title: 'dialog弹框',
+          component: DemoDialog
         },
         {
           path: 'pagination',

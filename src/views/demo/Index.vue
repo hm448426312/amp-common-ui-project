@@ -99,8 +99,16 @@
             title: 'message消息提示',
           },
           {
+            path: 'message-box',
+            title: 'message消息确认提示框',
+          },
+          {
             path: 'notification',
             title: 'notification消息通知',
+          },
+          {
+            path: 'dialog',
+            title: 'dialog弹框',
           },
           {
             path: 'pagination',

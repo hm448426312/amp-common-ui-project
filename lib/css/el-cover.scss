@@ -2220,6 +2220,7 @@
 
 /*el-dialog样式重置*/
 .el-dialog {
+  border-radius: 8px;
   .el-dialog__header {
     padding: 24px 16px 24px 24px;
     .el-dialog__title {
@@ -2228,6 +2229,7 @@
     }
     .el-dialog__headerbtn {
       right: 16px;
+      top: 16px;
       .el-dialog__close {
         color: #A0A4AF;
         &:hover {
@@ -2239,6 +2241,9 @@
   .el-dialog__body {
     padding: 8px 32px;
     color: #212A40;
+    max-height: calc(100vh - 15vh - 240px);
+    min-height: 32px;
+    overflow: auto;
   }
   .el-dialog__footer {
     padding: 32px;

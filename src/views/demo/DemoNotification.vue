@@ -4,8 +4,7 @@
       <el-form label-width="150px" label-position="left">
         <el-form-item label="说明">
           <p>1.二次封装了$notification方法，修改了info/success/warning/error类型的样式</p>
-          <p>2.使用时需要引入AmpGlobalMix，并放入混入mixins:[AmpGlobalMix]中</p>
-          <p>3.调用方法:this.$AmpNotify(提示文本(默认info类型) || 配置对象(参考notification))</p>
+          <p>2.调用方法:this.$AmpNotify(提示文本(默认info类型) || 配置对象(参考notification))</p>
         </el-form-item>
         <el-form-item label="notify通知提示">
           <amp-button @click="showMessage('success')">成功提示</amp-button>
