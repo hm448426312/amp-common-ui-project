@@ -28,6 +28,13 @@
         </li>
       </ul>
       <br/>
+      <p>封装element-ui组件列表</p>
+      <amp-form-table
+        :source-label="formLabel"
+        :source-data="formData"
+        :column="2"
+      ></amp-form-table>
+      <br/>
       <p>使用步骤</p>
       <ul class="demo-box">
         <li>
@@ -58,7 +65,48 @@
         subPage: false,
         activeTab: "first",
         testValue: "",
+        showTable: false,
+        formLabel: [],
+        formData: {
+          "el-button-按钮": "amp-button",
+          "el-cascader-级联": "amp-cascader",
+          "el-checkbox-复选": "amp-checkbox",
+          "el-checkbox-button-复选组的项": "amp-checkbox-button",
+          "el-checkbox-group-复选组": "amp-checkbox-group",
+          "el-collapse-折叠面板": "amp-collapse",
+          "el-date-picker-日期": "amp-date-picker",
+          "el-link-文字链接": "amp-link",
+          "el-select-下拉": "amp-select",
+          "el-option-group-下拉组": "amp-option-group",
+          "el-option-下拉项": "amp-option",
+          "el-pagination-分页": "amp-pagination",
+          "el-progress-进度条": "amp-progress",
+          "el-radio-单选": "amp-button",
+          "el-radio-group-单选组": "amp-radio-group",
+          "el-radio-button-单选组的项": "amp-radio-button",
+          "el-slider-滑块": "amp-slider",
+          "el-switch-开关": "amp-switch",
+          "el-table-表格": "amp-table",
+          "el-tag-标签": "amp-tag",
+          "el-timeline-时间线": "amp-timeline",
+          "el-timeline-item-时间线内容": "amp-timeline-item",
+          "el-time-picker-时间选择": "amp-time-picker",
+          "el-time-select-时间选择": "amp-time-select",
+          "el-tooltip-提示": "amp-tooltip",
+          "el-tree-树": "amp-tree 未测试，暂不替换",
+        },
       }
+    },
+    mounted() {
+      let temp = [];
+      let _that = this;
+      Object.keys(this.formData).forEach((key) => {
+        temp.push({
+          field: key,
+          label: key
+        })
+      });
+      this.formLabel = temp;
     }
   }
 </script>
