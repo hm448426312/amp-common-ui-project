@@ -24,9 +24,9 @@
     methods: {
       showLoading(target) {
         let loadingFlag = this.$AmpLoading(target);
-        // setTimeout(() => {
-        //   loadingFlag.close();
-        // }, 3000);
+        setTimeout(() => {
+          loadingFlag.close();
+        }, 3000);
       },
     }
   }

@@ -49,7 +49,7 @@
               >
                 <template slot-scope="scope">
                   <template v-if="header.field === 'action'">
-                    <amp-button
+                    <!--<amp-button
                       type="text"
                       icon="el-icon-edit"
                       tooltip="编辑"
@@ -60,7 +60,7 @@
                       icon="el-icon-delete"
                       tooltip="删除"
                       @click="deleteRowEvent"
-                    ></amp-button>
+                    ></amp-button>-->
                   </template>
                   <!-- 如果有列需要特殊处理，此处增加v-else-if即可 -->
                   <template v-else>
@@ -131,6 +131,59 @@
             :loading="table.loading"
             :data="table.data"
             border
+            style="width: 100%"
+          >
+            <el-table-column
+              type="selection"
+              width="40"
+            >
+            </el-table-column>
+            <template v-for="(header, index) of table.header">
+              <el-table-column
+                :prop="header.field"
+                :key="index"
+                :label="header.label"
+                :width="header.width || ''"
+                :align="header.align || 'left'"
+                :sortable="header.sortable"
+                :fixed="header.fixed || false"
+                :resizable="false"
+                show-overflow-tooltip
+              >
+                <template slot-scope="scope">
+                  <template v-if="header.field === 'action'">
+                    <amp-button
+                      type="text"
+                      icon="el-icon-edit"
+                      tooltip="编辑"
+                      @click="editRowEvent"
+                    ></amp-button>
+                    <amp-button
+                      type="text"
+                      icon="el-icon-delete"
+                      tooltip="删除"
+                      @click="deleteRowEvent"
+                    ></amp-button>
+                  </template>
+                  <!-- 如果有列需要特殊处理，此处增加v-else-if即可 -->
+                  <template v-else>
+                    <span class="white-space-pre">{{scope.row[header.field] || ''}}</span>
+                  </template>
+                </template>
+              </el-table-column>
+            </template>
+            <template slot="multipleHeader">
+              <amp-button type="text" icon="el-icon-edit">批量编辑</amp-button>
+              <amp-button type="text" icon="el-icon-delete">批量删除</amp-button>
+            </template>
+          </amp-table>
+        </el-form-item>
+        <el-form-item label="表格-边框-不可拖拽调整列宽">
+          <amp-table
+            :loading="table.loading"
+            :data="table.data"
+            border
+            size="medium"
             style="width: 100%"
           >
             <el-table-column
@@ -282,6 +335,59 @@
             </template>
           </amp-table>
         </el-form-item>
+        <el-form-item label="表格-无数据-小icon">
+          <amp-table
+            :loading="false"
+            :data="[]"
+            border
+            small
+            style="width: 100%"
+          >
+            <el-table-column
+              type="selection"
+              width="40"
+              fixed="left"
+            >
+            </el-table-column>
+            <template v-for="(header, index) of table.header1">
+              <el-table-column
+                :prop="header.field"
+                :key="index"
+                :label="header.label"
+                :width="header.width || ''"
+                :align="header.align || 'left'"
+                :sortable="header.sortable"
+                :fixed="header.fixed || false"
+                show-overflow-tooltip
+              >
+                <template slot-scope="scope">
+                  <template v-if="header.field === 'action'">
+                    <amp-button
+                      type="text"
+                      icon="el-icon-edit"
+                      tooltip="编辑"
+                      @click="editRowEvent"
+                    ></amp-button>
+                    <amp-button
+                      type="text"
+                      icon="el-icon-delete"
+                      tooltip="删除"
+                      @click="deleteRowEvent"
+                    ></amp-button>
+                  </template>
+                  <!-- 如果有列需要特殊处理，此处增加v-else-if即可 -->
+                  <template v-else>
+                    <span class="white-space-pre">{{scope.row[header.field] || ''}}</span>
+                  </template>
+                </template>
+              </el-table-column>
+            </template>
+            <template slot="multipleHeader">
+              <amp-button type="text" icon="el-icon-edit">批量编辑</amp-button>
+              <amp-button type="text" icon="el-icon-delete">批量删除</amp-button>
+            </template>
+          </amp-table>
+        </el-form-item>
       </el-form>
     </div>
   </amp-layout-content>
@@ -298,6 +404,7 @@
             {
               field: "name",
               label: "姓名",
+              sortable: true
             },
             {
               field: "sex",
@@ -306,7 +413,6 @@
             {
               field: "age",
               label: "年龄",
-              align: "right"
             },
             {
               field: "mark",
@@ -333,7 +439,6 @@
             {
               field: "age",
               label: "年龄",
-              align: "right",
             },
             {
               field: "custom",

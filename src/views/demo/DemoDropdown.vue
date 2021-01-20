@@ -25,7 +25,7 @@
             <br/>
             confirm(确认，返回参数为选中的value数组)</p>
         </el-form-item>
-        <el-form-item label="单选框">
+        <el-form-item label="自定义组件-有数据">
           <amp-button
             v-popover:ampMultipleConfirmPopperRef
             type="text"
@@ -39,11 +39,48 @@
             trigger="click">
             <amp-multiple-confirm
               v-if="value1"
+              :source="source"
               @cancel="value1=false"
               @confirm="configConfirmEvent"
               :default-checked="valueChecked"
             ></amp-multiple-confirm>
           </el-popover>
+        </el-form-item>
+        <el-form-item label="自定义组件-无数据">
+          <amp-button
+            v-popover:ampMultipleConfirmPopperRef1
+            type="text"
+          >配置<i class="el-icon-arrow-down el-icon--right"></i></amp-button>
+
+          <el-popover
+            ref="ampMultipleConfirmPopperRef1"
+            popper-class="amp-multiple-confirm-popper"
+            placement="bottom-start"
+            v-model="value2"
+            trigger="click">
+            <amp-multiple-confirm
+              v-if="value2"
+              @cancel="value2=false"
+              @confirm="configConfirmEvent"
+              :default-checked="valueChecked"
+            ></amp-multiple-confirm>
+          </el-popover>
+        </el-form-item>
+        <el-form-item label="常规用法">
+          <el-dropdown
+            @command="handleCommand"
+          >
+            <amp-button type="text">{{hobby?hobby:'全部爱好'}}<i class="el-icon-arrow-down el-icon--right"></i></amp-button>
+            <el-dropdown-menu
+              slot="dropdown"
+            >
+              <el-dropdown-item :command="handleCommandItem('篮球')">篮球</el-dropdown-item>
+              <el-dropdown-item :command="handleCommandItem('羽毛球')">羽毛球</el-dropdown-item>
+              <el-dropdown-item :command="handleCommandItem('足球')">足球</el-dropdown-item>
+              <el-dropdown-item :command="handleCommandItem('乒乓球')">乒乓球</el-dropdown-item>
+              <el-dropdown-item :command="handleCommandItem('排球')">排球</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
         </el-form-item>
       </el-form>
     </div>
@@ -56,13 +93,42 @@
     data() {
       return {
         value1: false,
+        value2: false,
+        source: [
+          {
+            label: "显示文本1",
+            value: "1"
+          }, {
+            label: "显示文本2",
+            value: "2"
+          }, {
+            label: "显示文本3",
+            value: "3"
+          }, {
+            label: "显示文本4",
+            value: "4"
+          }, {
+            label: "显示文本5",
+            value: "5"
+          }
+        ],
+        hobby: "",
         valueChecked: [],
         valueRadio1: 0
       }
     },
     methods: {
+      handleCommand(command) {
+        this.hobby = command.hobby;
+      },
+      handleCommandItem(hobby) {
+        return {
+          hobby: hobby
+        }
+      },
       configConfirmEvent(checkedList) {
         this.value1 = false;
+        this.value2 = false;
         this.valueChecked = checkedList;
         console.log(checkedList, "外层");
       },

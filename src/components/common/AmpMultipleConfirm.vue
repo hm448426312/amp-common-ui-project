@@ -221,6 +221,10 @@
         > > > .el-checkbox {
           display: flex;
           overflow: hidden;
+          .el-checkbox__input {
+            display: flex;
+            align-items: center;
+          }
           .el-checkbox__label {
             overflow: hidden;
           }

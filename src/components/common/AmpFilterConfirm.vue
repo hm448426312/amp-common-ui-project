@@ -52,7 +52,7 @@
         </li>
       </template>
       <template v-else-if="type === 'select'">
-        <div style="padding: 0 12px;">
+        <div style="padding: 0 12px; overflow: hidden">
           <amp-select
             v-model="selectedValue"
             :clearable="false"
@@ -268,9 +268,6 @@
       margin: 0 12px 8px;
       align-items: center;
     }
-    .amp-filter-confirm-search {
-
-    }
     .amp-filter-confirm-body {
       list-style: none;
       margin: 0;
@@ -299,6 +296,10 @@
         > > > .el-checkbox {
           display: flex;
           overflow: hidden;
+          .el-checkbox__input {
+            display: flex;
+            align-items: center;
+          }
           .el-checkbox__label {
             overflow: hidden;
           }

@@ -9,6 +9,15 @@
           <p>4.页码配置，使用全局定义的PAGE_NORMAL_CONFIG(普通)或者PAGE_MINI_CONFIG(小)</p>
           <p>5.配置参考el-pagination</p>
         </el-form-item>
+        <el-form-item label="数据只有1页，不显示">
+          <amp-pagination
+            :current-page="pageNormal.pageNum"
+            :page-sizes="pageNormal.pageSizes"
+            :page-size="pageNormal.pageSize"
+            :total="5"
+            background
+          ></amp-pagination>
+        </el-form-item>
         <el-form-item label="全量分页-带背景色">
           <amp-pagination
             :current-page="pageNormal.pageNum"

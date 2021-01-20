@@ -163,6 +163,9 @@
         flex: none;
         background: #FAFAFA;
         color: #646B80;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
       }
       .aft-value {
         color: #212A40;
