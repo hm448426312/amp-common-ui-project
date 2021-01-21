@@ -16,6 +16,13 @@
             <amp-button @click="valueStr < valueArr.length ? valueStr++ : ''">下一步</amp-button>
           </div>
         </el-form-item>
+        <el-form-item label="步骤条-简单-文本在下方">
+          <amp-steps under-text :active="valueStr" :steps="valueArr"></amp-steps>
+          <div class="mt16">
+            <amp-button @click="valueStr > 0 ? valueStr-- : ''">上一步</amp-button>
+            <amp-button @click="valueStr < valueArr.length ? valueStr++ : ''">下一步</amp-button>
+          </div>
+        </el-form-item>
         <el-form-item label="步骤条-带背景色">
           <amp-steps background :active="valueStr1" :steps="valueArr"></amp-steps>
           <div class="mt16">
@@ -37,12 +44,12 @@
         valueStr1: 0,
         valueArr: [
           {
-            text: "步骤1步骤1步骤1步骤1步骤1步骤1步骤1步骤1步骤1", // 显示文本
-            icon: "el-icon-plus", // 显示icon
+            text: "步骤1", // 显示文本
+            // icon: "el-icon-plus", // 显示icon
             desc: "", // 描述信息
           }, {
             text: "步骤2", // 显示文本
-            icon: "el-icon-delete", // 显示icon
+            // icon: "el-icon-delete", // 显示icon
             desc: "", // 描述信息
           }, {
             text: "步骤3", // 显示文本

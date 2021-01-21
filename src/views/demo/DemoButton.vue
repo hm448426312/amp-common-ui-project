@@ -10,17 +10,20 @@
         </el-form-item>
         <el-form-item label="default按钮">
           <amp-button>Default按钮</amp-button>
+          <amp-button :loading="btnLoading" @click="btnLoadingEvent">loading按钮</amp-button>
           <amp-button icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i></amp-button>
           <amp-button disabled>Default按钮</amp-button>
         </el-form-item>
         <el-form-item label="large按钮">
           <amp-button size="large">Default按钮</amp-button>
-          <amp-button size="large" icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i></amp-button>
+          <amp-button size="large" icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i>
+          </amp-button>
           <amp-button size="large" disabled>Default按钮</amp-button>
         </el-form-item>
         <el-form-item label="mini按钮">
           <amp-button size="mini">Default按钮</amp-button>
-          <amp-button size="mini" icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i></amp-button>
+          <amp-button size="mini" icon="el-icon-plus">Default按钮<i class="el-icon-upload el-icon--right"></i>
+          </amp-button>
           <amp-button size="mini" disabled>Default按钮</amp-button>
         </el-form-item>
         <el-form-item label="primary按钮">
@@ -61,7 +64,22 @@
 
 <script>
   export default {
-    name: "DemoButton"
+    name: "DemoButton",
+    data() {
+      return {
+        btnLoading: false
+      }
+    },
+    methods: {
+      btnLoadingEvent() {
+        this.btnLoading = !this.btnLoading;
+        if (this.btnLoading) {
+          setTimeout(() => {
+            this.btnLoading = false;
+          }, 3000)
+        }
+      }
+    }
   }
 </script>
 

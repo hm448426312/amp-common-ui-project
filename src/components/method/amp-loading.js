@@ -1,6 +1,5 @@
 /**
  * 显示/隐藏loading框-胡淼2021.1.5
- * @param isShow true显示|false隐藏
  * @param target 覆盖目标，详细参考el的loading的target参数
  * @returns 如果是显示遮罩，返回遮罩的对象，如果是关闭，返回null
  */

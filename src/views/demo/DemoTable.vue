@@ -126,19 +126,27 @@
             </template>
           </amp-table>
         </el-form-item>
-        <el-form-item label="表格-边框-不可拖拽调整列宽">
+        <el-form-item label="表格树">
           <amp-table
+            ref="treeTableRef"
             :loading="table.loading"
             :data="table.data"
+            :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
+            lazy
             border
+            :load="loadChildren"
+            row-key="id"
             style="width: 100%"
+            @select="handleSelectionChange"
+            @select-all="handleSelectionAllEvent"
           >
             <el-table-column
               type="selection"
               width="40"
+              fixed="left"
             >
             </el-table-column>
-            <template v-for="(header, index) of table.header">
+            <template v-for="(header, index) of table.header1">
               <el-table-column
                 :prop="header.field"
                 :key="index"
@@ -147,7 +155,6 @@
                 :align="header.align || 'left'"
                 :sortable="header.sortable"
                 :fixed="header.fixed || false"
-                :resizable="false"
                 show-overflow-tooltip
               >
                 <template slot-scope="scope">
@@ -183,7 +190,6 @@
             :loading="table.loading"
             :data="table.data"
             border
-            size="medium"
             style="width: 100%"
           >
             <el-table-column
@@ -404,6 +410,7 @@
             {
               field: "name",
               label: "姓名",
+              width: '300px',
               sortable: true
             },
             {
@@ -431,6 +438,7 @@
             {
               field: "name",
               label: "姓名",
+              width: '300px'
             },
             {
               field: "sex",
@@ -459,6 +467,9 @@
           data: [],
           loading: false
         },
+        tableId: 5,
+        checkedAll: false,
+        tableSelection: [],
         formTable: {
           formLabel: [
             {
@@ -508,6 +519,63 @@
       this.getTableData();
     },
     methods: {
+      handleSelectionAllEvent(selection) {
+        this.checkedAll = !this.checkedAll;
+        this.changeChildrenCheckedLoop(this.checkedAll);
+      },
+      changeChildrenCheckedLoop(checked, source) {
+        let tempSource = source || this.table.data;
+        let tableRef = this.$refs.treeTableRef.$refs.AmpTableRef;
+        tempSource.forEach((item, index) => {
+          if (checked && this.tableSelection.indexOf(item) === -1) {
+            this.tableSelection.push(item);
+          } else if (!checked && this.tableSelection.indexOf(item) !== -1) {
+            this.tableSelection.splice(this.tableSelection.indexOf(item), 1);
+          }
+          tableRef.toggleRowSelection(item, checked);
+          if (item.children && item.children.length > 0) {
+            this.changeChildrenCheckedLoop(checked, item.children);
+          }
+        })
+      },
+      changeParentCheckedLoop(checked, child) {
+        if (!child.parent) return;
+        let tableRef = this.$refs.treeTableRef.$refs.AmpTableRef;
+        let isAllChecked = checked;
+        // 子节点是选中状态，则判断所有子节点是否选中
+        if (checked) {
+          // 当前节点的子节点是否全部选中
+          for (let i = 0; i < child.parent.children.length; i++) {
+            if (this.tableSelection.indexOf(child.parent.children[i]) === -1) {
+              isAllChecked = false;
+              break;
+            }
+          }
+        }
+        if (isAllChecked && this.tableSelection.indexOf(child.parent) === -1) {
+          this.tableSelection.push(child.parent);
+        } else if (!isAllChecked && this.tableSelection.indexOf(child.parent) !== -1) {
+          this.tableSelection.splice(this.tableSelection.indexOf(child.parent), 1);
+        }
+        tableRef.toggleRowSelection(child.parent, isAllChecked);
+        this.changeParentCheckedLoop(checked, child.parent);
+      },
+      handleSelectionChange(selection, row) {
+        this.tableSelection = selection;
+        let checked = false;
+        if (selection.indexOf(row) !== -1) {
+          checked = true;
+        } else {
+          this.checkedAll = false;
+        }
+        // 子节点状态变更
+        if (row.children && row.children.length > 0) {
+          this.changeChildrenCheckedLoop(checked, row.children);
+        }
+        // 父节点状态变更
+        this.changeParentCheckedLoop(checked, row);
+        // this.$refs.treeTableRef.AmpTableSelectionChangeEvent(this.tableSelection);
+      },
       editRowEvent(row) {
         this.$AmpMessage(`编辑用户${row.name}`);
       },
@@ -517,12 +585,38 @@
           message: `删除用户${row.name}`
         });
       },
+      loadChildren(tree, treeNode, resolve) {
+        setTimeout(() => {
+          let tempArr = [
+            {
+              id: this.tableId++,
+              name: `张三${this.tableId}`,
+              sex: "男",
+              age: "28",
+              mark: "是个男的",
+              custom: "自定义列内容",
+              parent: tree,
+              hasChildren: true
+            }, {
+              id: this.tableId++,
+              name: `张三${this.tableId}`,
+              sex: "男",
+              age: "28",
+              mark: "是个男的",
+              parent: tree,
+              custom: "自定义列内容",
+            }
+          ];
+          this.$set(tree, 'children', tempArr);
+          resolve(tempArr)
+        }, 10)
+      },
       getTableData() {
         this.table.loading = true;
         setTimeout(() => {
           this.table.data = [
             {
-              id: '1',
+              id: 1,
               name: "张三",
               sex: "男",
               age: "28",
@@ -530,15 +624,16 @@
               custom: "自定义列内容",
             },
             {
-              id: '2',
+              id: 2,
               name: "李四",
               sex: "男",
               age: "28",
               mark: "是个男的",
               custom: "自定义列内容",
+              hasChildren: true
             },
             {
-              id: '3',
+              id: 3,
               name: "王麻子",
               sex: "男",
               age: "28",
@@ -546,7 +641,7 @@
               custom: "自定义列内容",
             },
             {
-              id: '4',
+              id: 4,
               name: "静静静静静静静静静静静静静静静静静静静静静静静静静静",
               sex: "女",
               age: "18",

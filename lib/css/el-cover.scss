@@ -1981,6 +1981,17 @@
 }
 
 .el-cascader {
+  .el-input {
+    .el-input__suffix {
+      .el-input__suffix-inner {
+        .el-icon-arrow-down {
+          &:before {
+            content: "\e790";
+          }
+        }
+      }
+    }
+  }
   &:not(.is-disabled) {
     .el-input {
       .el-input__inner {
@@ -2314,7 +2325,7 @@
           }
           &.el-icon-arrow-right {
             &:before {
-              content: "\e6df";
+              content: "\e790";
             }
           }
         }
