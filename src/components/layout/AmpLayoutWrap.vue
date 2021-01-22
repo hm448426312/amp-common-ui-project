@@ -32,7 +32,10 @@
         <i @click="closeHeaderFixedEvent" class="iconfont icon-guanbi"></i>
       </div>
     </div>
-    <div v-if="$slots['left-side']" class="amp-left-side-outer">
+    <div v-if="$slots['left-side']"
+         class="amp-left-side-outer"
+         :style="[{'width': leftWidth}]"
+    >
       <!--左侧菜单区-->
       <slot name="left-side"></slot>
     </div>
@@ -40,7 +43,10 @@
     <div class="amp-content-side-outer">
       <slot name="content-side"></slot>
     </div>
-    <div v-if="$slots['right-side']" class="amp-right-side-outer">
+    <div v-if="$slots['right-side']"
+         class="amp-right-side-outer"
+         :style="[{'width': rightWidth}]"
+    >
       <!--右侧菜单区-->
       <slot name="right-side"></slot>
     </div>
@@ -55,6 +61,16 @@
       headerTitle: {
         type: String,
         default: "我是标题"
+      },
+      // 左侧区域的宽度，默认240px
+      leftWidth: {
+        type: String,
+        default: "240px"
+      },
+      // 右侧区域的宽度，默认240px
+      rightWidth: {
+        type: String,
+        default: "240px"
       },
       // 是否固定头部
       headerFixed: {
@@ -104,7 +120,8 @@
     align-items: flex-start;
     flex-wrap: nowrap;
     background: #F5F7FA;
-    height: 100vh;
+    height: calc(100vh - 57px);
+
     .layout-header-fixed {
       position: fixed;
       width: 100%;
@@ -165,7 +182,6 @@
     }
     .amp-left-side-outer {
       flex: none;
-      width: 240px;
       height: 100%;
       box-sizing: border-box;
       padding: 16px 0;
@@ -174,7 +190,6 @@
     }
     .amp-right-side-outer {
       flex: none;
-      width: 240px;
       margin: 16px 16px 16px 0;
       height: calc(100% - 32px);
       box-sizing: border-box;

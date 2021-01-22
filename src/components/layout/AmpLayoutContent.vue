@@ -4,13 +4,14 @@
     :class="{
       'has-content-tabs': $slots['content-tabs'],
       'has-content-header': $slots['content-header'],
+      'no-default-style': clearContentStyle
      }"
   >
     <div class="amp-content-tabs">
       <!--右侧头部tabs-->
       <slot name="content-tabs"></slot>
     </div>
-    <div class="amp-content-box">
+    <div class="amp-content-box-outer">
       <div class="amp-content-header">
         <!--右侧头部标题区-->
         <slot name="content-header"></slot>
@@ -29,6 +30,13 @@
 <script>
   export default {
     name: "AmpLayoutContent",
+    props: {
+      // 是否清除内容区的样式，以适应内容区内的多卡片等布局
+      clearContentStyle: {
+        type: Boolean,
+        default: false
+      },
+    }
   }
 </script>
 
@@ -40,12 +48,23 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    &.no-default-style {
+      .amp-content-box-outer {
+        background-color: transparent;
+        .amp-content-header,
+        .amp-content-filter,
+        .amp-content-box {
+          padding: 0;
+          background-color: transparent;
+        }
+      }
+    }
     &.has-content-tabs {
       .amp-content-box {
         border-radius: 0 0 2px 2px;
       }
     }
-    .amp-content-box {
+    .amp-content-box-outer {
       background-color: #ffffff;
       flex: 1;
       display: flex;
