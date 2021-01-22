@@ -840,14 +840,16 @@
     padding: 8px 15px;
     font-weight: normal;
   }
-  &:first-child {
-    .el-radio-button__inner {
-      border-radius: 2px 0 0 2px;
+  .el-radio-button{
+    &:first-child {
+      .el-radio-button__inner {
+        border-radius: 2px 0 0 2px;
+      }
     }
-  }
-  &:last-child {
-    .el-radio-button__inner {
-      border-radius: 0 2px 2px 0;
+    &:last-child {
+      .el-radio-button__inner {
+        border-radius: 0 2px 2px 0;
+      }
     }
   }
   &:not([disabled]) {
@@ -1107,7 +1109,7 @@
     }
     &:not([disabled="disabled"]):hover {
       > .el-icon {
-        color: #212A40;
+        color: #1179F0;
       }
     }
   }
@@ -1985,6 +1987,9 @@
     .el-input__suffix {
       .el-input__suffix-inner {
         .el-icon-arrow-down {
+          &.is-reverse{
+            transform: rotateZ(-180deg);
+          }
           &:before {
             content: "\e790";
           }

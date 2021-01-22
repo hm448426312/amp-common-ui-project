@@ -45,11 +45,11 @@
         valueArr: [
           {
             text: "步骤1", // 显示文本
-            // icon: "el-icon-plus", // 显示icon
+            icon: "el-icon-plus", // 显示icon
             desc: "", // 描述信息
           }, {
             text: "步骤2", // 显示文本
-            // icon: "el-icon-delete", // 显示icon
+            icon: "el-icon-delete", // 显示icon
             desc: "", // 描述信息
           }, {
             text: "步骤3", // 显示文本

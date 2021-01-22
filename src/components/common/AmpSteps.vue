@@ -208,7 +208,7 @@
         &.iconfont {
           font-size: 20px;
           vertical-align: middle;
-          color: #D6D9E0;
+          color: #646B80;
         }
         &.no-icon {
           width: 20px;

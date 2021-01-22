@@ -140,9 +140,8 @@
           justify-content: flex-start;
           line-height: 22px;
           .my-message-content-type {
-            width: 18px;
-            height: 24px;
             margin-right: 4px;
+            font-size: 20px;
             flex: none;
             &.icon-tishi-fill {
               color: #1179F0;
