@@ -44,7 +44,7 @@
         valueStr1: 0,
         valueArr: [
           {
-            text: "步骤1", // 显示文本
+            text: "步骤1步骤1步骤1步骤1步骤1步骤1步骤1步骤1步骤1", // 显示文本
             icon: "el-icon-plus", // 显示icon
             desc: "", // 描述信息
           }, {

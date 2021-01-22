@@ -5,7 +5,6 @@
       :visible.sync="dialogVisible"
       :close-on-click-modal="false"
       :before-close="cancelEvent"
-      width="505px"
     >
       <div>
         <p>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</p>
