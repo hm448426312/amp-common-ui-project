@@ -608,7 +608,13 @@
             }
           ];
           this.$set(tree, 'children', tempArr);
-          resolve(tempArr)
+          resolve(tempArr);
+          // 父节点是选中状态，则自动选中子节点
+          if (this.tableSelection.indexOf(tree) !== -1) {
+            this.$nextTick(() => {
+              this.changeChildrenCheckedLoop(true, tree.children);
+            })
+          }
         }, 10)
       },
       getTableData() {
