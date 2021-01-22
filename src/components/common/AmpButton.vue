@@ -32,7 +32,10 @@
         // 文本按钮，带ICON，样式与纯文本按钮不一致，参考规范
         let classStr = "";
         if (this.$attrs.icon && this.$attrs.type === 'text') {
-          classStr = `amp-text-button-icon amp-text-button-sub-${this.subType}`;
+          classStr = `iconfont amp-text-button-icon amp-text-button-sub-${this.subType}`;
+          if (this.$slots.default) { // 按钮有文本
+            classStr += ' amp-text-button-has-text';
+          }
         }
         return classStr;
       },

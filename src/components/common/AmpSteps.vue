@@ -29,7 +29,9 @@
               <i class="amp-step__item-icon-inner iconfont" :class="step.icon"></i>
             </template>
             <template v-else>
-              <span class="amp-step__item-icon-inner no-icon">{{index + 1 }}</span>
+              <span class="amp-step__item-icon-inner no-icon">
+                <i>{{index + 1 }}</i>
+              </span>
             </template>
           </template>
           <template v-else>
@@ -61,7 +63,9 @@
                 <i class="amp-step__item-icon-inner iconfont" :class="step.icon"></i>
               </template>
               <template v-else>
-                <span class="amp-step__item-icon-inner no-icon">{{index + 1 }}</span>
+                <span class="amp-step__item-icon-inner no-icon">
+                  <i>{{index + 1 }}</i>
+                </span>
               </template>
             </template>
             <template v-else>
@@ -88,7 +92,9 @@
             <i class="amp-step__item-icon-inner iconfont" :class="step.icon"></i>
           </template>
           <template v-else>
-            <span class="amp-step__item-icon-inner no-icon">{{index + 1 }}</span>
+            <span class="amp-step__item-icon-inner no-icon">
+              <i>{{index + 1 }}</i>
+            </span>
           </template>
         </template>
         <template v-else>
@@ -211,13 +217,19 @@
           color: #646B80;
         }
         &.no-icon {
-          width: 20px;
-          height: 20px;
-          line-height: 20px;
-          border-radius: 50%;
-          background: #D6D9E0;
-          text-align: center;
-          color: #ffffff;
+          padding: 1px;
+          display: flex;
+          i {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            border-radius: 50%;
+            background: #D6D9E0;
+            text-align: center;
+            font-style: normal;
+            color: #ffffff;
+          }
         }
       }
       .amp-step__item-text {
@@ -240,8 +252,10 @@
             color: #1179F0
           }
           &.no-icon {
-            background-color: #1179F0;
-            color: #ffffff;
+            i {
+              background-color: #1179F0;
+              color: #ffffff;
+            }
           }
         }
       }

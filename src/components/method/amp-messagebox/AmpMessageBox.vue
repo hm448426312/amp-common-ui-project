@@ -19,7 +19,7 @@
       <div class="my-message-btn">
         <template v-for="item of btn">
           <amp-button
-            :loading="(item.loading ? item.loading.flag : false)"
+            :loading="(item.loading ? item.loading : false)"
             :key="item.index"
             :type="item.type || 'default'"
             @click="item.fn()"

@@ -139,6 +139,11 @@
     .amp-button-icon {
       font-size: 18px;
     }
+    &.amp-text-button-has-text {
+      .amp-button-icon {
+        font-size: 16px;
+      }
+    }
     & + .el-button--text {
       margin-left: 12px;
     }
@@ -403,6 +408,7 @@
   }
   .el-input__icon {
     color: #646B80;
+    font-size: 16px;
   }
   .el-icon-circle-close {
     &:before {
@@ -840,7 +846,7 @@
     padding: 8px 15px;
     font-weight: normal;
   }
-  .el-radio-button{
+  .el-radio-button {
     &:first-child {
       .el-radio-button__inner {
         border-radius: 2px 0 0 2px;
@@ -1063,8 +1069,10 @@
 
 /*分页栏样式重置*/
 .el-pagination {
-  > .el-pagination__total {
+  > span.el-pagination__total,
+  > span.el-pagination__jump {
     color: #646B80;
+    font-size: 14px;
   }
   > .el-pagination__sizes {
     .el-select--mini {
@@ -1100,7 +1108,8 @@
       }
     }
   }
-  > button {
+  > button.btn-next,
+  > button.btn-prev {
     min-width: 28px !important;
     height: 28px;
     line-height: 28px;
@@ -1132,7 +1141,8 @@
         }
       }
     }
-    > button {
+    > button.btn-next,
+    > button.btn-prev {
       background: #F5F7FA;
     }
   }
@@ -1987,7 +1997,7 @@
     .el-input__suffix {
       .el-input__suffix-inner {
         .el-icon-arrow-down {
-          &.is-reverse{
+          &.is-reverse {
             transform: rotateZ(-180deg);
           }
           &:before {
@@ -2077,7 +2087,7 @@
             }
             .el-cascader-node__label {
               padding-left: 0;
-              max-width: 150px;
+              max-width: 220px;
               display: flex;
               overflow: hidden;
               text-overflow: ellipsis;
