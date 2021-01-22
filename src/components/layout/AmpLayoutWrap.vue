@@ -5,13 +5,7 @@
   >
     <div class="layout-header-fixed" v-if="headerFixed">
       <div class="layout-header-fixed__title">{{headerTitle}}</div>
-      <slot name="header-fixed">
-        <el-tabs v-model="tabValue">
-          <el-tab-pane label="用户管理" name="first"></el-tab-pane>
-          <el-tab-pane label="配置管理" name="second"></el-tab-pane>
-          <el-tab-pane label="角色管理" name="third"></el-tab-pane>
-        </el-tabs>
-      </slot>
+      <slot name="header-fixed"></slot>
       <div class="layout-header-fixed__button">
         <el-dropdown
           v-if="headerButton && headerButton.length > 0"
@@ -128,7 +122,7 @@
       left: 0;
       top: 0;
       height: 60px;
-      z-index: 2;
+      z-index: 100;
       background-color: #ffffff;
       display: flex;
       padding: 0 20px;
@@ -164,21 +158,6 @@
           }
         }
       }
-      > > > .el-tabs {
-        .el-tabs__header {
-          .el-tabs__nav-wrap {
-            &:after {
-              background-color: transparent;
-            }
-            .el-tabs__nav {
-              .el-tabs__item {
-                height: 60px;
-                line-height: 60px;
-              }
-            }
-          }
-        }
-      }
     }
     .amp-left-side-outer {
       flex: none;
@@ -206,8 +185,30 @@
       overflow: hidden;
     }
     &.has-fixed-header {
-      height: calc(100vh - 60px);
-      padding-top: 60px;
+      /*height: calc(100vh - 60px);*/
+      /*padding-top: 60px;*/
+    }
+  }
+</style>
+<style lang="scss">
+  /*固定头部布局的内容区只能是tabs，更改样式*/
+  .amp-layout-box.has-fixed-header {
+    .layout-header-fixed {
+      .el-tabs {
+        .el-tabs__header {
+          .el-tabs__nav-wrap {
+            &:after {
+              background-color: transparent;
+            }
+            .el-tabs__nav {
+              .el-tabs__item {
+                height: 60px !important;
+                line-height: 60px !important;
+              }
+            }
+          }
+        }
+      }
     }
   }
 </style>

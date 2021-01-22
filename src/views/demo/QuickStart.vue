@@ -19,7 +19,7 @@
         <li>
           <p>main.js修改：</p>
           <p>a).import ElementUI from 'element-ui';</p>
-          <p>b).import AmpCommonUI from "amp-common-ui/dist/amp-common-ui"</p>
+          <p>b).import {AmpCommonUI} from "../index"</p>
           <p>c).import "element-ui/lib/theme-chalk/index.css";</p>
           <p>d).import 'amp-common-ui/lib/css/g-class.scss';</p>
           <p>e).import 'amp-common-ui/lib/css/el-cover.scss';</p>

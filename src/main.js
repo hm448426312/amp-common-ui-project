@@ -4,14 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
-import AmpUI from "../index"
+import {AmpCommonUI} from "../index"
 import "element-ui/lib/theme-chalk/index.css";
 import '../lib/css/g-class.scss';
 import '../lib/css/el-cover.scss';
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI, { size: 'small' });
-Vue.use(AmpUI);
+Vue.use(AmpCommonUI);
 
 /* eslint-disable no-new */
 new Vue({

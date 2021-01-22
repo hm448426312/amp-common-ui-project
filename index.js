@@ -40,7 +40,7 @@ import AmpFilterConfirm from "./src/components/common/AmpFilterConfirm";
 import AmpLayoutWrap from "./src/components/layout/AmpLayoutWrap";
 import AmpLayoutContent from "./src/components/layout/AmpLayoutContent";
 
-const install = function (Vue) {
+const AmpCommonUI = function (Vue) {
   Vue.prototype.$AmpMessage = AmpMessage;
   Vue.prototype.$AmpNotify = AmpNotify;
   Vue.prototype.$AmpLoading = AmpLoading;
@@ -80,12 +80,11 @@ const install = function (Vue) {
   Vue.component(AmpLayoutContent.name, AmpLayoutContent);
 };
 if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue)
+  AmpCommonUI(window.Vue)
 }
 export {
-  install,
+  AmpCommonUI,
   AmpMessage,
   AmpNotify,
-  AmpLoading,
-  AmpMessageBox
+  AmpLoading
 }

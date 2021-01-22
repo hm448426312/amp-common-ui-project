@@ -8,7 +8,7 @@ AmpMessageBox.install = (options) => {
     return null;
   }
 
-  if(document.querySelector('.my-message-box-outer')){
+  if (document.querySelector('.my-message-box-outer')) {
     return null;
   }
   const instance = new AmpMessageBox({
