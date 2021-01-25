@@ -8,6 +8,9 @@
         <el-tab-pane label="定时任务补偿" name="fourth"></el-tab-pane>
       </el-tabs>
     </template>
+    <template v-if="showRightBeforeHeader" slot="content-before-header">
+      头部标题之前的内容
+    </template>
     <template v-if="showRightHeader" slot="content-header">
       <div
         class="right-header-title"
@@ -59,6 +62,7 @@
         </el-form-item>
         <el-form-item label="当前页面动态显示头部信息">
           <amp-button @click="showRightTabs = !showRightTabs">{{showRightTabs?'隐藏':'显示'}}头部tabs区域</amp-button>
+          <amp-button @click="showRightBeforeHeader = !showRightBeforeHeader">{{showRightBeforeHeader?'隐藏':'显示'}}标题之前的区域</amp-button>
           <amp-button @click="showRightHeader = !showRightHeader">{{showRightHeader?'隐藏':'显示'}}头部标题/筛选区</amp-button>
           <amp-button @click="showRightFilter = !showRightFilter">
             {{showRightFilter?'隐藏':'显示'}}头部筛选区
@@ -86,6 +90,7 @@
       return {
         isCollapse: false,
         showRightTabs: false,
+        showRightBeforeHeader: false,
         showRightHeader: false,
         clearContentStyle: false,
         showRightFilter: false,

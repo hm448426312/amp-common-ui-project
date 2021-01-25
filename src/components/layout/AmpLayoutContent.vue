@@ -12,6 +12,10 @@
       <slot name="content-tabs"></slot>
     </div>
     <div class="amp-content-box-outer">
+      <div class="amp-content-before-header">
+        <!--右侧头部标题之上的区域，非常规-->
+        <slot name="content-before-header"></slot>
+      </div>
       <div class="amp-content-header">
         <!--右侧头部标题区-->
         <slot name="content-header"></slot>
@@ -51,6 +55,7 @@
     &.no-default-style {
       .amp-content-box-outer {
         background-color: transparent;
+        .amp-content-before-header,
         .amp-content-header,
         .amp-content-filter,
         .amp-content-box {
@@ -82,8 +87,11 @@
           background-color: #ffffff;
         }
       }
+      .amp-content-before-header,
       .amp-content-filter {
         padding: 0 24px;
+        font-size: 14px;
+        color: #212A40;
       }
       .amp-content-box {
         flex: 1;
