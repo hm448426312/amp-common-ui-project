@@ -909,7 +909,8 @@
       .el-table__header {
         tr {
           th {
-            padding: 2px 0 !important;
+            padding: 8px 0 !important;
+            line-height: 24px;
             > .cell {
               white-space: nowrap;
               color: #212A40;
@@ -990,7 +991,8 @@
             }
             td {
               font-size: 14px;
-              .cell{
+              line-height: 24px;
+              .cell {
                 line-height: 24px;
               }
               &.el-table-column--selection {
@@ -1076,6 +1078,7 @@
 
 /*分页栏样式重置*/
 .el-pagination {
+  text-align: right;
   > span.el-pagination__total,
   > span.el-pagination__jump {
     color: #646B80;
@@ -2482,7 +2485,8 @@
   &.el-menu--collapse {
     width: 64px;
   }
-  .el-menu-item {
+  .el-menu-item,
+  .el-submenu .el-submenu__title{
     height: 48px;
     line-height: 48px;
     padding: 0 20px 0 18px;
@@ -2497,12 +2501,15 @@
       border-color: #1179F0;
       background: #EFF6FE;
       color: #1179F0;
-      > [class*=el-icon] {
+      > [class*=el-icon],
+      > .iconfont {
         color: #1179F0;
       }
     }
-    > [class*=el-icon] {
+    > [class*=el-icon],
+    > .iconfont {
       color: #646B80;
+      margin-right: 8px;
     }
   }
   .el-submenu {
@@ -2534,14 +2541,15 @@
   &.el-menu--inline,
   &.el-menu--popup {
     .el-menu-item,
-    .el-submenu {
+    .el-submenu .el-submenu__title {
       font-weight: normal;
       color: #646B80;
       &.is-active {
         border-color: #1179F0;
         background: #EFF6FE;
         color: #1179F0;
-        > [class*=el-icon] {
+        > [class*=el-icon],
+        > .iconfont {
           color: #1179F0;
         }
       }
