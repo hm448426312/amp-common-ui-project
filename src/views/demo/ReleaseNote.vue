@@ -40,6 +40,10 @@
           ],
           data: [
             {
+              version: "1.0.3",
+              desc: "1.优化带ICON的按钮，支持阿里的字体库;"
+            },
+            {
               version: "1.0.2",
               desc: "1.优化amp-menu的样式，便于集成"
             },

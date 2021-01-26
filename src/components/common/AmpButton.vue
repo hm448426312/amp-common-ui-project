@@ -10,7 +10,7 @@
       v-on="$listeners"
       :class="getOwnClass()"
       @click="clientEvent()"
-      :icon="$attrs.icon ? 'amp-button-icon ' + $attrs.icon:''"
+      :icon="$attrs.icon ? 'iconfont amp-button-icon ' + $attrs.icon:''"
     >
       <slot></slot>
     </el-button>

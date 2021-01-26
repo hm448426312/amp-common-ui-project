@@ -7,20 +7,20 @@
       'no-default-style': clearContentStyle
      }"
   >
-    <div class="amp-content-tabs">
+    <div v-if="$slots['content-tabs']" class="amp-content-tabs">
       <!--右侧头部tabs-->
       <slot name="content-tabs"></slot>
     </div>
     <div class="amp-content-box-outer">
-      <div class="amp-content-before-header">
+      <div v-if="$slots['content-before-header']" class="amp-content-before-header">
         <!--右侧头部标题之上的区域，非常规-->
         <slot name="content-before-header"></slot>
       </div>
-      <div class="amp-content-header">
+      <div v-if="$slots['content-header']" class="amp-content-header">
         <!--右侧头部标题区-->
         <slot name="content-header"></slot>
       </div>
-      <div class="amp-content-filter">
+      <div v-if="$slots['content-filter']" class="amp-content-filter">
         <slot name="content-filter"></slot>
       </div>
       <div class="amp-content-box">

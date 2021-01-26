@@ -47,7 +47,7 @@
           <amp-button subType="danger" disabled icon="el-icon-delete" type="text"></amp-button>
         </el-form-item>
         <el-form-item label="带ICON文本按钮">
-          <amp-button icon="el-icon-edit" type="text">带ICON文本按钮</amp-button>
+          <amp-button icon="icon-bianji" type="text">带ICON文本按钮</amp-button>
           <amp-button disabled icon="el-icon-edit" type="text">带ICON文本按钮</amp-button>
           <amp-button subType="danger" icon="el-icon-delete" type="text">带ICON文本按钮-danger</amp-button>
           <amp-button subType="danger" disabled icon="el-icon-delete" type="text">带ICON文本按钮-danger</amp-button>
