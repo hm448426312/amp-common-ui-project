@@ -1,7 +1,6 @@
 /*全局样式*/
 * {
   margin: 0;
-  font-weight: normal;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
 }
 
@@ -124,7 +123,7 @@
     margin-right: 12px;
     > .el-input,
     > .el-select {
-      width: 224px;
+      //width: 224px;
     }
   }
   .filter-button {

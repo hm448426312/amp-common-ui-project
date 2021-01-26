@@ -35,6 +35,8 @@ import DemoPopover from "../views/demo/DemoPopover";
 import DemoForm from "../views/demo/DemoForm";
 import DemoLayoutFullPage from "../views/demo/DemoLayoutFullPage";
 import DemoDialog from "../views/demo/DemoDialog";
+import DemoMenu from "../views/demo/DemoMenu";
+import ReleaseNote from "../views/demo/ReleaseNote";
 
 Vue.use(Router)
 
@@ -50,9 +52,19 @@ export default new Router({
           component: QuickStart
         },
         {
+          path: 'release',
+          title: '版本说明',
+          component: ReleaseNote
+        },
+        {
           path: 'layout',
           title: '布局示例',
           component: DemoLayout
+        },
+        {
+          path: 'menu',
+          title: 'menu菜单',
+          component: DemoMenu
         },
         {
           path: 'loading',

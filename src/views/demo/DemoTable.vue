@@ -31,11 +31,6 @@
             :data="table.data"
             style="width: 100%"
           >
-            <el-table-column
-              type="selection"
-              width="40"
-            >
-            </el-table-column>
             <template v-for="(header, index) of table.header">
               <el-table-column
                 :prop="header.field"

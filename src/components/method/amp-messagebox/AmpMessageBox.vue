@@ -17,15 +17,14 @@
         </div>
       </div>
       <div class="my-message-btn">
-        <template v-for="item of btn">
-          <amp-button
-            :loading="(item.loading ? item.loading : false)"
-            :key="item.index"
-            :type="item.type || 'default'"
-            @click="item.fn()"
-          >{{ item.text }}
-          </amp-button>
-        </template>
+        <amp-button
+          v-for="item of btn"
+          :loading="(item.loading ? item.loading : false)"
+          :key="item.index"
+          :type="item.type || 'default'"
+          @click="item.fn()"
+        >{{ item.text }}
+        </amp-button>
       </div>
     </div>
   </div>
@@ -38,8 +37,11 @@
     "warning": "icon-jinggao-fill",
     "error": "icon-cuowu-fill",
   };
+  import AmpButton from "../../common/AmpButton";
+
   export default {
     name: "AmpMessageBox",
+    component: [AmpButton],
     data() {
       return {
         visible: false,
@@ -114,7 +116,7 @@
         align-items: center;
         justify-content: space-between;
         .my-message-tile-text {
-          font-size: 14px;
+          font-size: 16px;
           color: #212a40;
           font-weight: bold;
         }

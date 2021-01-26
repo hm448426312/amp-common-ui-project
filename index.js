@@ -36,6 +36,7 @@ import AmpCollapse from "./src/components/common/AmpCollapse";
 import AmpTree from "./src/components/common/AmpTree";
 import AmpMultipleConfirm from "./src/components/common/AmpMultipleConfirm";
 import AmpFilterConfirm from "./src/components/common/AmpFilterConfirm";
+import AmpMenu from "./src/components/common/AmpMenu";
 // 布局
 import AmpLayoutWrap from "./src/components/layout/AmpLayoutWrap";
 import AmpLayoutContent from "./src/components/layout/AmpLayoutContent";
@@ -76,6 +77,7 @@ const AmpCommonUI = function (Vue) {
   Vue.component(AmpTree.name, AmpTree);
   Vue.component(AmpMultipleConfirm.name, AmpMultipleConfirm);
   Vue.component(AmpFilterConfirm.name, AmpFilterConfirm);
+  Vue.component(AmpMenu.name, AmpMenu);
   Vue.component(AmpLayoutWrap.name, AmpLayoutWrap);
   Vue.component(AmpLayoutContent.name, AmpLayoutContent);
 };

@@ -31,8 +31,16 @@
             title: '快速应用',
           },
           {
+            path: 'release',
+            title: '版本说明',
+          },
+          {
             path: 'layout',
             title: '布局示例',
+          },
+          {
+            path: 'menu',
+            title: 'menu菜单',
           },
           {
             path: 'loading',
