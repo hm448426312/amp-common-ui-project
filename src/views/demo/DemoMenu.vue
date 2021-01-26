@@ -2,8 +2,10 @@
   <amp-layout-content
     :clear-content-style="true"
   >
-    <amp-button @click="menuTitle = menuTitle ? '' : '标题'">{{menuTitle ? "隐藏" : "显示"}}标题</amp-button>
-    <amp-button @click="collapseAble = !collapseAble">{{collapseAble ? "可折叠" : "不可折叠"}}</amp-button>
+    <template slot="content-filter">
+      <amp-button @click="menuTitle = menuTitle ? '' : '标题'">{{menuTitle ? "隐藏" : "显示"}}标题</amp-button>
+      <amp-button @click="collapseAble = !collapseAble">{{collapseAble ? "可折叠" : "不可折叠"}}</amp-button>
+    </template>
     <div class="demo1">
       <amp-menu
         :menu-data="menuData"

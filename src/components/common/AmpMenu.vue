@@ -14,43 +14,45 @@
         :class="isCollapse ? 'icon-zhankai' : 'icon-shouqi'"
       ></i>
     </div>
-    <el-menu
-      :collapse="isCollapse"
-      :default-active="defaultActive"
-      @open="handleOpen"
-      @close="handleClose"
-    >
-      <template v-for="(menu, index) in menuData">
-        <template v-if="menu[children] && menu[children].length > 0">
-          <el-submenu :key="index" :index="menu[id] + ''">
-            <template slot="title">
-              <i v-if="menu.icon" :class="menu.icon"></i>
-              <span>{{menu.title}}</span>
-            </template>
-            <template v-for="(subMenu, subIndex) in menu[children]">
-              <el-menu-item
-                :key="index + '' +subIndex"
-                :index="subMenu[id] + ''"
-                @click="handleMenuItemClick(subMenu, menu)"
-              >
-                <i v-if="subMenu.icon" :class="subMenu.icon"></i>
-                <span slot="title">{{subMenu.title}}</span>
-              </el-menu-item>
-            </template>
-          </el-submenu>
+    <div class="amp-menu-content">
+      <el-menu
+        :collapse="isCollapse"
+        :default-active="defaultActive"
+        @open="handleOpen"
+        @close="handleClose"
+      >
+        <template v-for="(menu, index) in menuData">
+          <template v-if="menu[children] && menu[children].length > 0">
+            <el-submenu :key="index" :index="menu[id] + ''">
+              <template slot="title">
+                <i v-if="menu.icon" class="iconfont" :class="menu.icon"></i>
+                <span>{{menu.title}}</span>
+              </template>
+              <template v-for="(subMenu, subIndex) in menu[children]">
+                <el-menu-item
+                  :key="index + '' +subIndex"
+                  :index="subMenu[id] + ''"
+                  @click="handleMenuItemClick(subMenu, menu)"
+                >
+                  <i v-if="subMenu.icon" class="iconfont" :class="subMenu.icon"></i>
+                  <span slot="title">{{subMenu.title}}</span>
+                </el-menu-item>
+              </template>
+            </el-submenu>
+          </template>
+          <template v-else>
+            <el-menu-item
+              :key="index"
+              :index="menu[id] + ''"
+              @click="handleMenuItemClick(menu)"
+            >
+              <i v-if="menu.icon" class="iconfont" :class="menu.icon"></i>
+              <span slot="title">{{menu.title}}</span>
+            </el-menu-item>
+          </template>
         </template>
-        <template v-else>
-          <el-menu-item
-            :key="index"
-            :index="menu[id] + ''"
-            @click="handleMenuItemClick(menu)"
-          >
-            <i v-if="menu.icon" :class="menu.icon"></i>
-            <span slot="title">{{menu.title}}</span>
-          </el-menu-item>
-        </template>
-      </template>
-    </el-menu>
+      </el-menu>
+    </div>
   </div>
 </template>
 
@@ -124,6 +126,7 @@
     flex-direction: column;
     transition: 0.5s ease;
     overflow: hidden;
+    height: 100%;
     &.is-collapse {
       width: 64px;
       .amp-menu-title {
@@ -147,6 +150,7 @@
       transition: .5s ease;
       align-items: center;
       box-sizing: border-box;
+      flex: none;
       h2 {
         max-width: 200px;
         overflow: hidden;
@@ -169,6 +173,10 @@
           color: #1179F0;
         }
       }
+    }
+    .amp-menu-content {
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 </style>

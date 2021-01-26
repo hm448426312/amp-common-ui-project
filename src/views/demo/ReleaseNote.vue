@@ -40,6 +40,10 @@
           ],
           data: [
             {
+              version: "1.0.2",
+              desc: "1.优化amp-menu的样式，便于集成"
+            },
+            {
               version: "1.0.1",
               desc: "1.新增自定义组件amp-menu，并调整el-menu的样式；\r\n" +
                 "2.移除*的font-weight:normal样式；\r\n" +

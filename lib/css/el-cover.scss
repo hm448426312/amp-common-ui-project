@@ -2472,7 +2472,7 @@
 /*el-menu样式重置*/
 .el-menu {
   width: 240px;
-  border-right-color: transparent;
+  border-right: none;
   &.el-menu--collapse {
     width: 64px;
   }
