@@ -38,6 +38,7 @@ import DemoDialog from "../views/demo/DemoDialog";
 import DemoMenu from "../views/demo/DemoMenu";
 import ReleaseNote from "../views/demo/ReleaseNote";
 import DemoTableMixins from "../views/demo/DemoTableMixins";
+import DemoStatus from "../views/demo/DemoStatus";
 
 Vue.use(Router)
 
@@ -181,6 +182,11 @@ export default new Router({
           path: 'switch',
           title: 'switch开关',
           component: DemoSwitch
+        },
+        {
+          path: 'status',
+          title: 'status状态',
+          component: DemoStatus
         },
         {
           path: 'slider',

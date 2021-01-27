@@ -40,6 +40,10 @@
           ],
           data: [
             {
+              version: "1.0.7",
+              desc: "1.新增组件amp-status，具体参考demo"
+            },
+            {
               version: "1.0.6",
               desc: "1.分页参数的pageSize默认值更改为10；\r\n"+
                 "2.单选、复选、开关的文本在苹果系统中粗体问题修复；\n"

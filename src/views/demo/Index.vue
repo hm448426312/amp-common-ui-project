@@ -136,6 +136,10 @@
             title: 'switch开关',
           },
           {
+            path: 'status',
+            title: 'status状态',
+          },
+          {
             path: 'slider',
             title: 'slider滑块',
           },

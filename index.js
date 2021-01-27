@@ -26,6 +26,7 @@ import AmpSelect from "./src/components/common/AmpSelect";
 import AmpSlider from "./src/components/common/AmpSlider";
 import AmpSteps from "./src/components/common/AmpSteps";
 import AmpSwitch from "./src/components/common/AmpSwitch";
+import AmpStatus from "./src/components/common/AmpStatus";
 import AmpTable from "./src/components/common/AmpTable";
 import AmpTag from "./src/components/common/AmpTag";
 import AmpTimeline from "./src/components/common/AmpTimeline";
@@ -67,6 +68,7 @@ const AmpCommonUI = function (Vue) {
   Vue.component(AmpSlider.name, AmpSlider);
   Vue.component(AmpSteps.name, AmpSteps);
   Vue.component(AmpSwitch.name, AmpSwitch);
+  Vue.component(AmpStatus.name, AmpStatus);
   Vue.component(AmpTable.name, AmpTable);
   Vue.component(AmpTag.name, AmpTag);
   Vue.component(AmpTimeline.name, AmpTimeline);
