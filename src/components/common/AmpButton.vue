@@ -9,7 +9,7 @@
       v-bind="$attrs"
       v-on="$listeners"
       :class="getOwnClass()"
-      @click="clientEvent()"
+      @click.prevent="clientEvent()"
       :icon="$attrs.icon ? 'iconfont amp-button-icon ' + $attrs.icon:''"
     >
       <slot></slot>

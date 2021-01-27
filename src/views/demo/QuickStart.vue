@@ -81,7 +81,7 @@
           "el-option-下拉项": "amp-option",
           "el-pagination-分页": "amp-pagination",
           "el-progress-进度条": "amp-progress",
-          "el-radio-单选": "amp-button",
+          "el-radio-单选": "amp-radio",
           "el-radio-group-单选组": "amp-radio-group",
           "el-radio-button-单选组的项": "amp-radio-button",
           "el-slider-滑块": "amp-slider",

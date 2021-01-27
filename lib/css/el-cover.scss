@@ -901,7 +901,7 @@
 .el-table {
   position: relative;
   color: #646B80;
-  min-height: 100px;
+  min-height: 70px;
   &.el-table--small {
     .el-table__header-wrapper,
     .el-table__fixed .el-table__fixed-header-wrapper,
@@ -992,6 +992,9 @@
             td {
               font-size: 14px;
               line-height: 24px;
+              &.is-first-td{
+                color: #212A40;
+              }
               .cell {
                 line-height: 24px;
               }

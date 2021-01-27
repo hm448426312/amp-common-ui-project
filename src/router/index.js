@@ -37,6 +37,7 @@ import DemoLayoutFullPage from "../views/demo/DemoLayoutFullPage";
 import DemoDialog from "../views/demo/DemoDialog";
 import DemoMenu from "../views/demo/DemoMenu";
 import ReleaseNote from "../views/demo/ReleaseNote";
+import DemoTableMixins from "../views/demo/DemoTableMixins";
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
           path: 'layout',
           title: '布局示例',
           component: DemoLayout
+        },
+        {
+          path: 'table-mixins',
+          title: 'tableMixins示例',
+          component: DemoTableMixins
         },
         {
           path: 'menu',

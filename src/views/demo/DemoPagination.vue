@@ -11,7 +11,7 @@
         </el-form-item>
         <el-form-item label="数据只有1页，不显示">
           <amp-pagination
-            :current-page="pageNormal.pageNum"
+            :current-page="pageNormal.pageNo"
             :page-sizes="pageNormal.pageSizes"
             :page-size="pageNormal.pageSize"
             :total="5"
@@ -20,7 +20,7 @@
         </el-form-item>
         <el-form-item label="全量分页-带背景色">
           <amp-pagination
-            :current-page="pageNormal.pageNum"
+            :current-page="pageNormal.pageNo"
             :page-sizes="pageNormal.pageSizes"
             :page-size="pageNormal.pageSize"
             :total="400"
@@ -29,7 +29,7 @@
         </el-form-item>
         <el-form-item label="全量分页-无背景色">
           <amp-pagination
-            :current-page="pageNormal.pageNum"
+            :current-page="pageNormal.pageNo"
             :page-sizes="pageNormal.pageSizes"
             :page-size="pageNormal.pageSize"
             :total="400"

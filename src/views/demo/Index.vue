@@ -1,6 +1,7 @@
 <template>
   <amp-layout-wrap>
     <template v-if="showLeftMenu" slot="left-side">
+      <amp-button type="primary" @click="goMixinsTable()">返回混入表格示例页面</amp-button>
       <ul class="left-menu">
         <li
           v-for="(item, index) in leftArr"
@@ -37,6 +38,10 @@
           {
             path: 'layout',
             title: '布局示例',
+          },
+          {
+            path: 'table-mixins',
+            title: 'tableMixins示例',
           },
           {
             path: 'menu',
@@ -180,6 +185,17 @@
         }
         this.$router.push({
           path: this.selectedItem.path
+        })
+      },
+      goMixinsTable() {
+        if (this.$route.path === `/table-mixins`) {
+          return false;
+        }
+        this.$router.push({
+          path: "/table-mixins",
+          query: {
+            back: "1"
+          }
         })
       },
       changeItemEvent(item) {
