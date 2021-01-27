@@ -40,6 +40,14 @@
           ],
           data: [
             {
+              version: "1.0.5",
+              desc: "1.更改分页的当前页变量:pageNum更改为pageNo；\n" +
+                "2.表格最小高度调整，避免只有一行数据的时候，有两个border-bottom；\n" +
+                "3.表格第一列文本字体颜色设置，需要自行增加class-name=is-first-td\n" +
+                "4.增加表格页面的混入方案，具体参考表格混入示例页面\n" +
+                "5.amp-button问题修复：点击后url增加了问号"
+            },
+            {
               version: "1.0.4",
               desc: "1.调整分页栏右对齐；\r\n" +
                 "2.优化el-menu的submenu样式,icon间距；\r\n" +
