@@ -676,6 +676,7 @@
 .el-checkbox {
   .el-checkbox__label {
     color: #212A40;
+    font-weight: normal;
   }
   .el-checkbox__input {
     //.el-checkbox__inner::after{
@@ -788,6 +789,7 @@
 .el-radio {
   .el-radio__label {
     color: #212A40;
+    font-weight: normal;
   }
   .el-radio__input {
     .el-radio__inner {
@@ -1772,6 +1774,7 @@
   }
   .el-switch__label {
     color: #A0A4AF;
+    font-weight: normal;
     font-size: 18px;
     &.is-active {
       color: #212A40;
