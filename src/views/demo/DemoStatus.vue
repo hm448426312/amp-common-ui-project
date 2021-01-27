@@ -8,10 +8,10 @@
         </el-form-item>
         <el-form-item label="默认">
           <amp-status text="不传"></amp-status>
-          <amp-status text="正常" type="success"></amp-status>
-          <amp-status text="失败" type="error"></amp-status>
-          <amp-status text="警告" type="error"></amp-status>
-          <amp-status text="灰色" type="error"></amp-status>
+          <amp-status text="success类型" type="success"></amp-status>
+          <amp-status text="error类型" type="error"></amp-status>
+          <amp-status text="warning类型" type="warning"></amp-status>
+          <amp-status text="info类型" type="info"></amp-status>
           <amp-status text="自定义颜色-蓝色" color="blue" type="error"></amp-status>
         </el-form-item>
       </el-form>
