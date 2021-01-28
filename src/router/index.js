@@ -66,6 +66,7 @@ export default new Router({
         {
           path: 'table-mixins',
           title: 'tableMixins示例',
+          name: 'table-mixins',
           component: DemoTableMixins
         },
         {

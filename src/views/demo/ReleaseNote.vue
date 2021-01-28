@@ -40,6 +40,11 @@
           ],
           data: [
             {
+              version: "1.0.10",
+              desc: "1.AmpTablePage混入方案，原query参数更改为params参数\r\n" +
+                "2.amp-menu内容区自适应高度，超出有滚动条"
+            },
+            {
               version: "1.0.9",
               desc: "1.el-menu去掉加粗字体；\r\n" +
                 "2.布局调整，title需要加粗"

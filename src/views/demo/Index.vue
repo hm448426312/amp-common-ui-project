@@ -195,9 +195,12 @@
         if (this.$route.path === `/table-mixins`) {
           return false;
         }
+        // 返回tablpage页面，需要增加name，值与路由定义的name一致；
+        // 需要增加params参数的back为1
         this.$router.push({
           path: "/table-mixins",
-          query: {
+          name: "table-mixins",
+          params:{
             back: "1"
           }
         })

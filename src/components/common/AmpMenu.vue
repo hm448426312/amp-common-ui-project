@@ -177,6 +177,7 @@
     .amp-menu-content {
       overflow-y: auto;
       overflow-x: hidden;
+      flex: 1;
     }
   }
 </style>
