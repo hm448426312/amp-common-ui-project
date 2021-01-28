@@ -15,7 +15,7 @@
             class="right-header-title"
             :class="{'sub-page': subPage}"
           >
-            代码管理
+            <b>代码管理</b>
             <span class="desc">标题描述</span>
             <div style="margin-left: auto">
               <amp-button type="primary">克隆</amp-button>

@@ -2499,7 +2499,7 @@
     border-left: 2px solid transparent;
     color: #212A40;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: normal;
     &:hover {
       background: #F2F2F2;
     }
@@ -2529,7 +2529,7 @@
         > [class*=el-icon] {
           color: #646B80;
         }
-        font-weight: bold;
+        font-weight: normal;
       }
       .el-submenu__icon-arrow {
 

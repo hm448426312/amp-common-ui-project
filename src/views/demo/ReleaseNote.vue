@@ -40,6 +40,11 @@
           ],
           data: [
             {
+              version: "1.0.9",
+              desc: "1.el-menu去掉加粗字体；\r\n" +
+                "2.布局调整，title需要加粗"
+            },
+            {
               version: "1.0.8",
               desc: "1.优化AmpTablePage混入方法；\r\n" +
                 "2.分页栏根据total进行判断显示，大于0才显示"
