@@ -40,6 +40,12 @@
           ],
           data: [
             {
+              version: "1.0.11",
+              desc: "1.表格的单元格高度调整\n" +
+                "2.按钮的tooltip默认位置更改为top\n" +
+                "3.更改amp-table批量操作按钮间距，取消选择按钮靠左"
+            },
+            {
               version: "1.0.10",
               desc: "1.AmpTablePage混入方案，原query参数更改为params参数\r\n" +
                 "2.amp-menu内容区自适应高度，超出有滚动条"

@@ -2,7 +2,7 @@
   <el-tooltip
     :disabled="!$attrs.tooltip"
     :content="$attrs.tooltip"
-    :placement="$attrs.placement || 'top-start'"
+    :placement="$attrs.placement || 'top'"
   >
     <el-button
       ref="AmpButtonRef"

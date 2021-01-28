@@ -48,6 +48,7 @@
       :data="table.data"
       style="width: 100%"
       @sort-change="sortChange"
+      border
     >
       <!--复选框库看度必须40px-->
       <el-table-column
@@ -93,7 +94,7 @@
       </template>
       <!--批量编辑区域-->
       <template slot="multipleHeader">
-        <amp-button type="text" icon="icon-bianji">批量编辑(iconfont)</amp-button>
+        <amp-button type="text" tooltip="批量编辑" icon="icon-bianji">批量编辑(iconfont)</amp-button>
         <amp-button type="text" icon="el-icon-delete">批量删除(el-icon)</amp-button>
       </template>
     </amp-table>

@@ -8,6 +8,9 @@
           <p>2.1.source-label中属性有:field(对应value的key),label(label显示文本),wholeRow(是否占整行，默认false)</p>
           <p>3.参数source-data:表格的value显示的数据，与source-label的field对应</p>
           <p>4.参数column:表格分为多少列，默认为2</p>
+          <p>5.el-table二次封装为amp-table，在原有el-table的基础上提供插槽myEmpty,multipleHeader</p>
+          <p>6.multipleHeader插槽为多选的批量操作按钮区域</p>
+          <p style="color: red">7.【重要：复选框的列宽度必须是40】</p>
         </el-form-item>
         <el-form-item label="基础表格">
           <amp-form-table

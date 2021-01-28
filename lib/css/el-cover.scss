@@ -911,7 +911,7 @@
       .el-table__header {
         tr {
           th {
-            padding: 8px 0 !important;
+            padding: 6px 0 !important;
             line-height: 24px;
             > .cell {
               white-space: nowrap;
@@ -994,6 +994,7 @@
             td {
               font-size: 14px;
               line-height: 24px;
+              padding: 7.5px 0 !important;
               &.is-first-td{
                 color: #212A40;
               }

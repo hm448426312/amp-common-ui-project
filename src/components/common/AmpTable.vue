@@ -31,13 +31,13 @@
       <span style="color: #000000;font-size: 14px;">已选</span>
       <span style="color: #1179F0;font-size: 18px;margin: 0 8px;">{{selectedCount}}</span>
       <span style="color: #000000;font-size: 14px;margin-right: 36px;">项</span>
-      <div>
+      <div class="amp-table-multiple-buttons">
         <slot name="multipleHeader">
           <!--此处放批量操作按钮-->
         </slot>
       </div>
       <amp-button
-        style="margin-left:auto;"
+        style="margin-left: 32px;"
         type="text"
         @click="cancelCheckedEvent"
       >取消选择
@@ -119,6 +119,11 @@
       flex-direction: row;
       align-items: center;
       padding: 0 10px;
+      .amp-table-multiple-buttons {
+        > .el-button + .el-button {
+          margin-left: 16px;
+        }
+      }
     }
   }
 </style>
