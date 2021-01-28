@@ -111,7 +111,6 @@
 </template>
 
 <script>
-  import {PAGE_NORMAL_CONFIG} from "../../../lib/constant/global";
   import {AmpTablePage} from "../../../lib/mixins/mixins";
 
   export default {

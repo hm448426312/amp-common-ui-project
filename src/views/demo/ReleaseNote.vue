@@ -40,6 +40,11 @@
           ],
           data: [
             {
+              version: "1.0.8",
+              desc: "1.优化AmpTablePage混入方法；\r\n" +
+                "2.分页栏根据total进行判断显示，大于0才显示"
+            },
+            {
               version: "1.0.7",
               desc: "1.新增组件amp-status，具体参考demo"
             },

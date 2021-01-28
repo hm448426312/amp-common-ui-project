@@ -1,5 +1,6 @@
 <template>
   <el-pagination
+    v-if="$attrs.total && $attrs.total > 0"
     :layout="$attrs.layout || 'total,sizes,prev,pager,next,jumper'"
     ref="AmpPaginationRef"
     v-bind="$attrs"
