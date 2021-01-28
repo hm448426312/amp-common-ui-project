@@ -5,7 +5,6 @@
     ref="AmpPaginationRef"
     v-bind="$attrs"
     v-on="$listeners"
-    :hide-on-single-page="true"
   >
     <slot></slot>
   </el-pagination>

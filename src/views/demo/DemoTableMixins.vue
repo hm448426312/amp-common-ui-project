@@ -2,7 +2,7 @@
   <amp-layout-content>
     <template slot="content-header">
       <div class="right-header-title">
-        表格混入页面示例
+        <b>表格混入页面示例</b>
       </div>
     </template>
     <template slot="content-filter">
@@ -46,6 +46,7 @@
     <amp-table
       :loading="table.loading"
       :data="table.data"
+      :max-height="getTableMaxHeight"
       style="width: 100%"
       @sort-change="sortChange"
       border
@@ -188,6 +189,22 @@
         }
       }
     },
+    computed: {
+      // 计算表格的最大高度，固定的可以不改，其余的需要自己计算
+      getTableMaxHeight() {
+        const winHeight = window.innerHeight;
+        const topHeight = 60; // 顶部导航高度 -固定
+        const layoutHeight = 60; // 布局间距高度  -固定
+        const tableOtherHeight = 70; // table表头和分页栏高度 -固定
+        const headerHeight = 60; // 页面标题高度  -业务自身判断
+        const filterHeight = 56; // 筛选条件高度  -业务自身判断
+        let resHeight = winHeight - topHeight - headerHeight - layoutHeight - filterHeight - tableOtherHeight;
+        if (resHeight <= 50) {
+          resHeight = 50;
+        }
+        return resHeight;
+      }
+    },
     mounted() {
       // 此处一定要这样，否则会导致页面返回的时候，参数无法赋值，
       // 原因为：beforeRouteEnter的next内的方法晚于mounted执行
@@ -215,43 +232,20 @@
         console.log(this.filterParamsAjax);
         this.table.loading = true;
         setTimeout(() => {
-          this.table.data = [
-            {
-              id: 1,
-              name: "张三",
+          let tempArr = [];
+          for (let i = 0; i < 100; i++) {
+            tempArr.push({
+              id: i + 1,
+              name: "张三" + i,
               sex: "男",
               age: "28",
               mark: "是个男的",
               custom: "自定义列内容",
-            },
-            {
-              id: 2,
-              name: "李四",
-              sex: "男",
-              age: "28",
-              mark: "是个男的",
-              custom: "自定义列内容",
-              hasChildren: true
-            },
-            {
-              id: 3,
-              name: "王麻子",
-              sex: "男",
-              age: "28",
-              mark: "是个男的",
-              custom: "自定义列内容",
-            },
-            {
-              id: 4,
-              name: "静静静静静静静静静静静静静静静静静静静静静静静静静静",
-              sex: "女",
-              age: "18",
-              mark: "美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女美女靓女",
-              custom: "自定义列内容美女靓女",
-            }
-          ];
+            })
+          }
+          this.table.data = tempArr;
           this.table.loading = false;
-          this.pageParams.total = 200;
+          this.pageParams.total = tempArr.length;
         }, 1000)
       },
       // 示例 操作-编辑

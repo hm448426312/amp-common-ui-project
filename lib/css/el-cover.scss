@@ -978,6 +978,7 @@
     .el-table__body-wrapper,
     .el-table__fixed .el-table__fixed-body-wrapper,
     .el-table__fixed-right .el-table__fixed-body-wrapper {
+      transition: max-height .5s ease;
       .el-table__body {
         tbody {
           tr {
