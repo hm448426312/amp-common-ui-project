@@ -40,6 +40,10 @@
           ],
           data: [
             {
+              version: "1.0.14",
+              desc: "1.amp-tooltip支持插槽slot=content"
+            },
+            {
               version: "1.0.13",
               desc: "1.AmpTablePage混入的分页size变化，页码置为第一页"
             },

@@ -65,6 +65,13 @@
           >
             <amp-button>下提示</amp-button>
           </amp-tooltip>
+          <amp-tooltip
+            placement="bottom"
+            effect="light"
+          >
+            <template slot="content"><span style="color: red">slot的提示语<br>第二行</span></template>
+            <amp-button>下提示</amp-button>
+          </amp-tooltip>
         </el-form-item>
       </el-form>
     </div>
