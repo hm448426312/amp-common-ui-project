@@ -2,7 +2,6 @@
   <el-tooltip
     ref="AmpTooltipRef"
     v-bind="$attrs"
-    :content="$attrs.content || $slots.content || ''"
   >
     <slot></slot>
   </el-tooltip>
