@@ -40,6 +40,10 @@
           ],
           data: [
             {
+              version: "1.0.15",
+              desc: "1.AmpTablePage混入的分页size变化，第一页的页码放入filterParamsAjax对象中"
+            },
+            {
               version: "1.0.14",
               desc: "1.amp-tooltip支持插槽slot=content"
             },
