@@ -4,6 +4,9 @@ import {AmpMessage} from "./src/components/method/amp-message";
 import {AmpNotify} from "./src/components/method/amp-notification";
 import {AmpLoading} from "./src/components/method/amp-loading";
 import AmpMessageBox from "./src/components/method/amp-messagebox/index";
+// 表单校验
+import {ValidationObserver} from "vee-validate";
+import VeeInput from "./src/components/validate/VeeInput";
 // 控件
 import AmpButton from "./src/components/common/AmpButton";
 import AmpTooltip from "./src/components/common/AmpTooltip";
@@ -43,10 +46,15 @@ import AmpLayoutWrap from "./src/components/layout/AmpLayoutWrap";
 import AmpLayoutContent from "./src/components/layout/AmpLayoutContent";
 
 const AmpCommonUI = function (Vue) {
+  // 方法
   Vue.prototype.$AmpMessage = AmpMessage;
   Vue.prototype.$AmpNotify = AmpNotify;
   Vue.prototype.$AmpLoading = AmpLoading;
   Vue.prototype.$AmpMessageBox = AmpMessageBox.install;
+  // 表单校验
+  Vue.component("ValidationObserver", ValidationObserver);
+  Vue.component(VeeInput.name, VeeInput);
+  // 组件
   Vue.component(AmpButton.name, AmpButton);
   Vue.component(AmpTooltip.name, AmpTooltip);
   Vue.component(AmpOverTooltip.name, AmpOverTooltip);
@@ -80,6 +88,7 @@ const AmpCommonUI = function (Vue) {
   Vue.component(AmpMultipleConfirm.name, AmpMultipleConfirm);
   Vue.component(AmpFilterConfirm.name, AmpFilterConfirm);
   Vue.component(AmpMenu.name, AmpMenu);
+  // 布局
   Vue.component(AmpLayoutWrap.name, AmpLayoutWrap);
   Vue.component(AmpLayoutContent.name, AmpLayoutContent);
 };

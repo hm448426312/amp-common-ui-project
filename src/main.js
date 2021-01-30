@@ -13,6 +13,8 @@ Vue.config.productionTip = false;
 Vue.use(ElementUI, { size: 'small' });
 Vue.use(AmpCommonUI);
 
+require('./components/validate/validate-rule');
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
