@@ -3,7 +3,9 @@
     ref="AmpTooltipRef"
     v-bind="$attrs"
   >
-    <slot></slot>
+    <template v-for="(index, name) in $slots" v-slot:[name] >
+      <slot :name="name"></slot>
+    </template>
   </el-tooltip>
 </template>
 

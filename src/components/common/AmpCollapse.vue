@@ -5,7 +5,9 @@
     v-on="$listeners"
     :class="$attrs.background !== undefined ? 'is-background' : ''"
   >
-    <slot/>
+    <template v-for="(index, name) in $slots" v-slot:[name] >
+      <slot :name="name"></slot>
+    </template>
   </el-collapse>
 </template>
 

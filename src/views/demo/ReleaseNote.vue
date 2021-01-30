@@ -40,6 +40,10 @@
           ],
           data: [
             {
+              version: "1.0.17",
+              desc: "1.所有二次封装，未自定义的组件，可使用原element的插槽"
+            },
+            {
               version: "1.0.16",
               desc: "1.AmpTablePage混入的分页size变化，第一页的页码放入filterParamsAjax对象中"
             },

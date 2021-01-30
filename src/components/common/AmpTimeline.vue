@@ -4,7 +4,9 @@
     v-bind="$attrs"
     v-on="$listeners"
   >
-    <slot></slot>
+    <template v-for="(index, name) in $slots" v-slot:[name] >
+      <slot :name="name"></slot>
+    </template>
   </el-timeline>
 </template>
 

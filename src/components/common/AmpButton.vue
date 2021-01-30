@@ -12,7 +12,9 @@
       @click.prevent="clientEvent()"
       :icon="$attrs.icon ? 'iconfont amp-button-icon ' + $attrs.icon:''"
     >
-      <slot></slot>
+      <template v-for="(index, name) in $slots" v-slot:[name] >
+        <slot :name="name"></slot>
+      </template>
     </el-button>
   </el-tooltip>
 </template>
